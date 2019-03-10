@@ -1,0 +1,17 @@
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "1 * * * * *"
+    },
+    {
+      "type": "eventHub",
+      "name": "outputEventHubMessage",
+      "connection": "ade-dev-eastus2-hub1_Sender_EVENTHUB",
+      "eventHubName": "ade-dev-hub1-double",
+      "direction": "out"
+    }
+  ]
+}
