@@ -1,0 +1,5 @@
+New-AzResourceGroup -Name "ade-dev-eastus2" -Location "East US 2"
+$SecureStringPassword = ConvertTo-SecureString -String "Password1!" -AsPlainText -Force
+$User = New-AzADUser -DisplayName "Tech User" -UserPrincipalName "techuser@domain.onmicrosoft.com" -Password $SecureStringPassword -MailNickname "techuser"
+$Group = New-AzADGroup -DisplayName "Technical Operations" -MailNickname "TechOps"
+Add-AzADGroupMember -MemberObjectId $User.Id -TargetGroupObjectId $Group.Id
