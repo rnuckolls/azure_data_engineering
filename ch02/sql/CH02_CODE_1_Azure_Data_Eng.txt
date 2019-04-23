@@ -1,0 +1,30 @@
+WITH aggregateStep AS (
+ SELECT 
+	 ServiceId,
+	 System.Timestamp as AvgTime,
+	 AVG(duration) as AvgDuration,
+	 COUNT(1) as EventCount
+ FROM [input]
+ GROUP BY ServiceId, TumblingWindow(second, 2)
+),
+anomalyStep AS (
+ SELECT
+	 ServiceId,
+	 AvgTime,
+	 AvgDuration,
+	 EventCount,
+	 ANOMALYDETECTION(AvgDuration) OVER (LIMIT DURATION(second, 30)) as Scores
+ FROM aggregateStep
+)
+SELECT 
+ ServiceId,
+ Error = 1,
+ DATEADD(second, -5, AvgTime) as StartTime,
+ AvgTime as EndTime,
+ AvgDuration,
+ EventCount,
+ Scores
+INTO [output]
+FROM anomalyStep
+WHERE
+ CAST(GetRecordPropertyValue(scores, 'BiLevelChangeScore') as float) >= 3.5

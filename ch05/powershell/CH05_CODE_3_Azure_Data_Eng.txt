@@ -1,0 +1,22 @@
+$account = Get-AzStorageAccount -ResourceGroupName "ade-dev-eastus2" -AccountName "adedeveastus2"
+$queue = Get-AzStorageQueue -Name "pitcherstats" -Context $account.Context
+
+for($i = 0; $i -lt 30; $i++)
+{
+$game = "JNT202004080"
+$pitcher = "abera101"
+$speed = Get-Random -Minimum 75 -Maximum 110
+$type = switch (Get-Random -Minimum 1 -Maximum 4) {
+  1 {"FA"; break}
+  2 {"CU"; break}
+  3 {"KN"; break}
+}
+$isStrike = switch (Get-Random -Minimum 0 -Maximum 2) {
+  0 {"false"; break}
+  1 {"true"; break}
+}
+
+$message = @{Game=$game; Pitcher=$pitcher; Speed=$speed; Type=$type; IsStrike=$isStrike} | ConvertTo-Json -Compress 
+$queueMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage  -ArgumentList $message
+$queue.CloudQueue.AddMessageAsync($QueueMessage)
+}

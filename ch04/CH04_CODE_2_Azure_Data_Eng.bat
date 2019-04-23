@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Microsoft SDKs\Azure\ADLCopy\adlcopy" /Source https://dedeveastus2.blob.core.windows.net/datalakeload/files/ /Dest adl://dedeveastus.azuredatalakestore.net/staging/finance/p-abc-v1.2/ /sourcekey LF1eItwYGas1dTWpEw/MUQZtANHr3xLoAl2OPDtBKNPB35u1mZZopRxbXKyFEHv5TS0khaESwYSaCctXo+mb5A== /Pattern *.csv /Account dedeveastus /Units 2

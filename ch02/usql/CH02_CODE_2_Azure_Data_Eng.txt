@@ -1,0 +1,22 @@
+DECLARE @year = "2008";
+DECLARE @source = string.Format("/satellite/{0}/{1}", @year, "*");
+DECLARE @destination = string.Format("/satellite/region/north_america/{0}.csv", @year);
+@data = 
+EXTRACT
+latitude string,
+longitude string,
+measurementdate datetime,
+measurement int
+FROM @source
+USING Extractors.Csv(rowDelimiter:"\n");
+@nadata = 
+SELECT 
+latitude,
+longitude,
+measurementdate,
+measurement
+FROM @data
+WHERE latitude >= 10 AND latitude < 90 AND longitude <= -50 AND longitude > -180;
+OUTPUT @nadata
+TO @destination
+USING Outputters.Csv();

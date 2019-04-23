@@ -1,0 +1,5 @@
+New-AzEventHubNamespace -ResourceGroupName "ade-dev-eastus2" -NamespaceName "ade-dev-westus2-hubs" -Location "West US 2" -SkuName "Standard" -SkuCapacity 2 -Tag @{User="ADE";} -EnableAutoInflate -MaximumThroughputUnits 5 -EnableKafka
+New-AzEventHubGeoDRConfiguration -ResourceGroupName "ade-dev-eastus2" -Namespace "ade-dev-eastus2-hubs" -Name "ade-dev-hubs-alias" -PartnerNamespace "ade-dev-westus2-hubs" 
+$primary = Get-AzEventHubNamespace -ResourceGroupName "ade-dev-eastus2" -NamespaceName "ade-dev-eastus2-hubs"
+$secondary = Get-AzEventHubNamespace -ResourceGroupName "ade-dev-eastus2" -NamespaceName "ade-dev-westus2-hubs"
+New-AzEventHubGeoDRConfiguration -ResourceGroupName "ade-dev-eastus2" -Namespace $primary.Name -Name "ade-dev-hubs-alias"  -PartnerNamespace $secondary.Id
