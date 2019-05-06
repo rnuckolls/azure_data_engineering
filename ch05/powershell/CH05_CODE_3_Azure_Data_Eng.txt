@@ -5,18 +5,22 @@ for($i = 0; $i -lt 30; $i++)
 {
 $game = "JNT202004080"
 $pitcher = "abera101"
+$inning = Get-Random -Minimum 0 -Maximum 10
+$pitch = Get-Random -Minimum 0 -Maximum 110
+$inningPitch = $inning.ToString("D2") + "T" + $pitch.ToString()
 $speed = Get-Random -Minimum 75 -Maximum 110
 $type = switch (Get-Random -Minimum 1 -Maximum 4) {
   1 {"FA"; break}
   2 {"CU"; break}
   3 {"KN"; break}
 }
-$isStrike = switch (Get-Random -Minimum 0 -Maximum 2) {
-  0 {"false"; break}
-  1 {"true"; break}
+$result = switch (Get-Random -Minimum 0 -Maximum 3) {
+  0 {"B"; break}
+  1 {"S"; break}
+  2 {"F"; break}
 }
 
-$message = @{Game=$game; Pitcher=$pitcher; Speed=$speed; Type=$type; IsStrike=$isStrike} | ConvertTo-Json -Compress 
+$message = @{Game=$game; Pitcher=$pitcher; InningPitch=$inningPitch; Speed=$speed; Type=$type; Result=$result} | ConvertTo-Json -Compress 
 $queueMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage  -ArgumentList $message
 $queue.CloudQueue.AddMessageAsync($QueueMessage)
 }
