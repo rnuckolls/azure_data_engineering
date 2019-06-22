@@ -1,0 +1,4 @@
+New-AzSqlServer -ResourceGroupName "abe-dev-eastus2" -Location "East US 2" -ServerName "abe-dev-eastus2-sql" -ServerVersion "12.0" -SqlAdministratorCredentials (Get-Credential)
+New-AzSqlDatabase -ResourceGroupName "abe-dev-eastus2" -ServerName "abe-dev-eastus2-sql" -DatabaseName "Biometricstats"
+New-AzSqlServerFirewallRule -ResourceGroupName "abe-dev-eastus2" -ServerName "abe-dev-eastus2-sql" -AllowAllAzureIPs
+Invoke-Sqlcmd -Query "CREATE TABLE raw (Id uniqueidentifier, Player varchar(255), Node int, [Value] decimal(5,2), EventTime datetime2, PartitionId int, EventProcessedUtcTime datetime2, EventEnqueuedUtcTime datetime2);" -ServerInstance "tcp:abe-dev-eastus2-sql.database.windows.net" -Database "Biometricstats" -Credential (Get-Credential)

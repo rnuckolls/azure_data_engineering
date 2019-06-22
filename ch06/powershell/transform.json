@@ -1,0 +1,6 @@
+{    
+   "properties":{    
+      "streamingUnits":1,  
+      "query":"select Id, [Value], Player, Node, EventTime, PartitionId, EventProcessedUtcTime, EventEnqueuedUtcTime into output from input;"
+   }  
+}

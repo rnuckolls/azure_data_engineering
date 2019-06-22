@@ -1,0 +1,15 @@
+{
+"properties":{
+"datasource":{
+"type":"Microsoft.Sql/Server/Database",
+"properties":{
+"server":"sampleserver.database.windows.net",
+"database":"sampleDB",
+"table":"sampleTable",
+"user":"user@sampleserver",
+"password":"****************",
+"batchSize":100
+}
+}
+}
+}

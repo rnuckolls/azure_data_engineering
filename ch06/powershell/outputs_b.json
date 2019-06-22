@@ -1,0 +1,28 @@
+{
+"properties": {
+"datasource": {
+"type": "Microsoft.DataLake/Accounts",
+"properties": {
+"filePathPrefix": "staging/bio",
+"accountName": "abedeveastus2",
+"tenantId": "f41e678f-812a-43cf-b020-7c1f89e52901",
+"dateFormat": "yyyy/MM/dd",
+"timeFormat": "HH",
+"authenticationMode": "UserToken",
+"refreshToken": null,
+"accessToken": null,
+"tokenUserPrincipalName": "azure1@rnuckolls.com",
+"tokenUserDisplayName": "021bb710-0c44-4670-b3da-de3ed9b73309 faeab305-63d4-44a0-89c2-46c866eacddf"
+}
+},
+"serialization": {
+"type": "Csv",
+"properties": {
+"fieldDelimiter": ",",
+"encoding": "UTF8"
+}
+}
+},
+"name": "output",
+"type": "Microsoft.StreamAnalytics/streamingjobs/outputs"
+}

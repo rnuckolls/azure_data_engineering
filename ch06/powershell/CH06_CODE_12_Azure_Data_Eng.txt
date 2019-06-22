@@ -1,0 +1,1 @@
+(Get-AzLog -ResourceId (Get-AzResource -Name "ade-dev-eastus2-asa-biometricstats").ResourceId -Status "Failed" -MaxRecord 5).Properties
