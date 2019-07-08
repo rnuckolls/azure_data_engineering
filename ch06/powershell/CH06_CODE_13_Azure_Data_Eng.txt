@@ -37,7 +37,7 @@ $eventDate = (Get-Date).ToUniversalTime().ToString("o")
 $htbody = @{ 
     Player= $player
     Node= $node
-    Value= $val
+    NodeValue= $val
     EventTime= $eventDate
   }
 $body = ConvertTo-Json $htbody

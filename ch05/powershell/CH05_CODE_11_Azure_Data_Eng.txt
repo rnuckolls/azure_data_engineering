@@ -19,7 +19,7 @@ $htbody = @{
     Id=(New-Guid).Guid
     Player="abera101"
     Node=(Get-Random -Minimum 0 -Maximum 40)
-    Value=(Get-Random -Minimum 40 -Maximum 110)
+    NodeValue=(Get-Random -Minimum 40 -Maximum 110)
     EventTime= $eventDate
   }
 $messages.Add((ConvertTo-Json @{

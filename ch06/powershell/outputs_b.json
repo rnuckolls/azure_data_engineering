@@ -23,6 +23,6 @@
 }
 }
 },
-"name": "output",
+"name": "BlobOutputBio",
 "type": "Microsoft.StreamAnalytics/streamingjobs/outputs"
 }

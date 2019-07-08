@@ -14,7 +14,7 @@ for($i = 0; $i -lt 30; $i++)
 $htbody = @{ 
     Player="abera101"
     Node=12
-    Value=100.2
+    NodeValue=100.2
     EventTime= $eventDate
   }
 $body = ConvertTo-Json $htbody

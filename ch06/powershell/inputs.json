@@ -21,6 +21,6 @@
             }
         }
     },
-    "name": "input",
+    "name": "HubsInputBiometrics",
     "type": "Microsoft.StreamAnalytics/streamingjobs/inputs"
 }
