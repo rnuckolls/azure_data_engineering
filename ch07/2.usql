@@ -1,0 +1,18 @@
+DECLARE EXTERNAL @in string = "/Staging/Test/sensor_00.csv";
+DECLARE EXTERNAL @out string = "/Raw/Test/test1.tsv";
+
+@test = 
+    EXTRACT Id Guid,
+            Player string,
+            Node int,
+            [Value] decimal,
+            EventTime DateTime,
+            PartitionId int,
+            EventEnqueuedUtcTime DateTime,
+            EventProcessedUtcTime DateTime
+    FROM @in
+    USING Extractors.Csv();
+
+OUTPUT @test
+TO @out
+USING Outputters.Tsv();

@@ -1,0 +1,14 @@
+DECLARE EXTERNAL @in string = "/Staging/Test/test1.csv";
+DECLARE EXTERNAL @out string = "/Raw/Test/test1.tsv";
+
+@test = 
+    EXTRACT Id int,
+            Server int,
+            Version int,
+            Vent string
+    FROM @in
+    USING Extractors.Csv();
+
+OUTPUT @test
+TO @out
+USING Outputters.Tsv();
