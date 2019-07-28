@@ -36,4 +36,6 @@
 36	Right Heel Pressure
 37	Left Metatarsal Pressure
 38	Right Metatarsal Pressure
+39	Unused
+40	Unused
 
