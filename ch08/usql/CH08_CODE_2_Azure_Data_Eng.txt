@@ -1,0 +1,52 @@
+DECLARE EXTERNAL @in string = "/Staging/Trips/{*}.csv";
+
+@Players =
+EXTRACT
+    Club string,
+    Player string,
+    Month string,
+    Year int?,
+    Miles decimal?
+    FROM @in
+    USING Extractors.Csv(skipFirstNRows:1);
+
+@Trips = 
+SELECT Club,
+    Player,
+    Month,
+    Year,
+    SUM(Miles) AS TotalMiles,
+    COUNT(1) AS CountOfTrips
+    FROM @Players
+    GROUP BY Club, Player, Month, Year;
+
+OUTPUT @Trips
+    TO "/Sandbox/User1/Trips/club_trip_overview.csv"
+    ORDER BY Club, Player, Month, Year
+    FETCH 1000 ROWS
+    USING Outputters.Csv(outputHeader: true, quoting: true);
+
+@UpperFields = 
+SELECT Club.ToUpper() AS Club,
+    Player.ToUpper() AS Player,
+    Month.ToUpper() AS Month,
+    Year,
+    Miles
+    FROM @Players;
+
+@EmptyFields = 
+SELECT Club,
+    Player,
+    Month,
+    Year,
+    Miles
+    FROM @UpperFields
+    WHERE || String.IsNullOrEmpty(Club) || String.IsNullOrEmpty(Player)
+    || String.IsNullOrEmpty(Month) || Year == NULL || Miles == NULL
+    || Club == "NULL" || Player == "NULL" || Month == "NULL"
+    || Year == 0 || Miles == 0 || Year == NULL || Miles == NULL;
+
+OUTPUT @EmptyFields
+    TO "/Sandbox/User1/Trips/club_trip_nulls.csv"
+    ORDER BY Club, Player, Month, Year
+    USING Outputters.Csv(outputHeader: true, quoting: true);

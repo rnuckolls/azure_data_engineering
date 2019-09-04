@@ -1,0 +1,12 @@
+USE DATABASE Players;
+DECLARE @partition string = "mjone101";
+ALTER TABLE SensorData
+ADD IF NOT EXISTS PARTITION (@partition);
+
+DECLARE @partition2 string = "pharv102";
+ALTER TABLE SensorData
+ADD IF NOT EXISTS PARTITION (@partition2);
+
+DECLARE @partitionx string = "playerx";
+ALTER TABLE SensorData
+ADD IF NOT EXISTS PARTITION (@partitionx);

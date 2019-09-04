@@ -1,0 +1,43 @@
+DECLARE EXTERNAL @in string = "/Staging/Trips/{*}.csv";
+
+@PlayerMiles =
+EXTRACT
+    Club string,
+    Player string,
+    Month string,
+    Year int?,
+    Miles decimal?
+    FROM @in
+    USING Extractors.Csv(skipFirstNRows:1, nullEscape: "NULL");
+
+@Fields = 
+SELECT Club ?? string.Format("Unknown {0}", "Club") AS Club,
+    Player ?? string.Format("Unknown {0}", "Player") AS Player,
+    DateTime.Parse(Month + " 1," + Year.ToString(), CultureInfo.InvariantCulture).ToString("MMMM") AS Month,
+    DateTime.UtcNow.Year - Year < 2000 ? 1900 + Year : 2000 + Year AS FullYear,
+    Miles,
+    DateTime.Parse(Month + " 1," + Year.ToString(), CultureInfo.InvariantCulture) AS FullDate
+    FROM @PlayerMiles
+    WHERE string.IsNullOrEmpty(Month) == false && Year != NULL;
+
+    
+OUTPUT @Fields
+    TO "/Sandbox/User1/Trips/club_trip_ordered.csv"
+    ORDER BY FullDate, Club DESC, Player DESC, Miles DESC
+    USING Outputters.Text(outputHeader: true, quoting: true);
+
+@EmptyFields = 
+SELECT Club,
+    Player,
+    Month,
+    Year,
+    Miles,
+    Miles > 1000 & (string.IsNullOrWhiteSpace(Club) || string.IsNullOrWhiteSpace(Player)) ? true : false AS IsMilesCounted
+    FROM @PlayerMiles
+    WHERE String.IsNullOrEmpty(Month) || Year == NULL;
+
+
+OUTPUT @EmptyFields
+    TO "/Sandbox/User1/Trips/club_trip_nulls.csv"
+    ORDER BY Club, Player, Month, Year
+    USING Outputters.Text(outputHeader: true, quoting: true);

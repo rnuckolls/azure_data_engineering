@@ -1,0 +1,18 @@
+DECLARE EXTERNAL @in string = "/Staging/Trips/{*}.csv";
+
+@Trips =
+EXTRACT
+    Aa string
+    FROM @in
+    USING Extractors.Text(
+    skipFirstNRows:0,
+    delimiter: '^',
+    quoting: false,
+    silent: true
+    );
+
+OUTPUT @Trips
+    TO "/Sandbox/User1/Trips/trip_extract.csv"
+    ORDER BY Aa
+    FETCH 100 ROWS
+    USING Outputters.Csv();

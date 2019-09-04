@@ -1,0 +1,27 @@
+@rows = 
+SELECT * 
+FROM (VALUES
+    (1,"ABE",12,4,"<span>Test</span>"),
+    (2,"ABEF",22,2,"<span>Fourth</span>"),
+    (3,"AB",13,2,"<span></span>")
+    ) AS r(Id,Code,Volume,Units,Detail);
+
+@newrows = 
+SELECT 
+    Id,
+    Code,
+    string.Format(
+    "{0}{1}", 
+    Code, 
+    string.IsNullOrWhiteSpace(
+        Detail.Replace("<span>", "")
+        .Replace("</span>", "")) ? 
+            string.Empty : 
+            ":" + Detail.Replace("<span>", "").Replace("</span>", "")
+        ) AS Detail,
+    (Volume * Units) AS Sold
+FROM @rows;
+
+OUTPUT @newrows
+TO "Sandbox/User1/code-units.csv"
+USING Outputters.Csv(outputHeader:true);

@@ -1,0 +1,1 @@
+Submit-AzDataLakeAnalyticsJob -Account "adedeveastus2" -Name "Sensor Passthrough" -ScriptPath "~/adla/passthrough.usql" -AnalyticsUnits 1

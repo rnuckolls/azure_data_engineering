@@ -1,0 +1,23 @@
+DECLARE EXTERNAL @in string = "/Staging/Sensor/v1/{*}.csv";
+
+@Players = 
+    EXTRACT Id Guid,
+        Player string,
+        Node int,
+        NodeValue decimal,
+        EventTime DateTime,
+        PartitionId int,
+        EventEnqueuedUtcTime DateTime,
+        EventProcessedUtcTime DateTime
+    FROM @in
+    USING Extractors.Csv(skipFirstNRows: 1);
+
+@PlayersPassthrough = 
+    SELECT *
+    FROM @Players;
+
+DECLARE EXTERNAL @out string = "/Raw/Sensor/v1/sensor_all.csv";
+
+OUTPUT @PlayersPassthrough
+    TO @out
+    USING Outputters.Csv(outputHeader: true);

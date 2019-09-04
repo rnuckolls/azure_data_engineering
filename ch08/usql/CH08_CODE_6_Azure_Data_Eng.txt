@@ -1,0 +1,17 @@
+DROP FUNCTION IF EXISTS [fGetFiles];
+CREATE FUNCTION [fGetFiles]
+(@HandleNulls bool = true, 
+ @Replacement string = "UNKNOWN") <1>
+RETURNS @rows TABLE([field] string, [field2] string) <2>
+AS
+BEGIN <3>
+    IF @HandleNulls == true THEN <4>
+        @rows = 
+        SELECT  [field] ?? @Replacement AS [field], 
+                [field2] ?? @Replacement AS [field2]
+                FROM [table];
+    ELSE <5>
+        @rows = 
+        SELECT [field], [field2] FROM [table];
+    END; <6>
+END; <7>

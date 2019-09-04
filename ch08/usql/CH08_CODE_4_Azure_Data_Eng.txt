@@ -1,0 +1,15 @@
+USE DATABASE Players; 
+CREATE TABLE IF NOT EXISTS SensorData
+(
+    Id string,
+    Player string,
+    Node int,
+    NodeValue decimal,
+    EventTime DateTime,
+    PartitionId int,
+    EventEnqueuedUtcTime DateTime,
+    EventProcessedUtcTime DateTime,
+    INDEX idx_SensorData CLUSTERED(Player ASC, Node ASC, EventTime ASC)
+)
+DISTRIBUTED BY HASH(Player, Node) INTO 3;
+

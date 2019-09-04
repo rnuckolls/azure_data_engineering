@@ -1,0 +1,17 @@
+USE DATABASE Players; 
+@data = 
+    EXTRACT 
+    Id string,
+    Player string,
+    Node int,
+    NodeValue decimal,
+    EventTime DateTime,
+    PartitionId int,
+    EventEnqueuedUtcTime DateTime,
+    EventProcessedUtcTime DateTime
+    FROM "/Staging/Sensor/v1/sensor_{*}.csv"
+    USING Extractors.Csv(skipFirstNRows:1);
+
+INSERT INTO SensorData
+(Id,Player,Node,NodeValue,EventTime,PartitionId,EventEnqueuedUtcTime,EventProcessedUtcTime)
+SELECT * FROM @data;

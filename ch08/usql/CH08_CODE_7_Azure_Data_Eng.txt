@@ -1,0 +1,11 @@
+DROP FUNCTION IF EXISTS [fGetFiles];
+CREATE FUNCTION [fGetFiles](@folder string, @prefix string = "{*}")
+RETURNS @files TABLE([field] string, [field2] string)
+AS
+BEGIN
+@files = 
+    EXTRACT [field] string,
+            [field2] string
+    FROM string.Format("/{0}/{1}.csv", @folder, @prefix)
+    USING Extractors.Csv();
+END;
