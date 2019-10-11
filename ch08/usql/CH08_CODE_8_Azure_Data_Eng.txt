@@ -1,27 +1,50 @@
-@rows = 
-SELECT * 
-FROM (VALUES
-    (1,"ABE",12,4,"<span>Test</span>"),
-    (2,"ABEF",22,2,"<span>Fourth</span>"),
-    (3,"AB",13,2,"<span></span>")
-    ) AS r(Id,Code,Volume,Units,Detail);
+USE DATABASE Players;
+DROP FUNCTION IF EXISTS f_Sensors;
+CREATE FUNCTION f_Sensors  (@version string = "v2")
+RETURNS @result TABLE(
+    Id Guid, Player string, Node int, NodeType string,
+    NodeName string, NodeValue decimal, EventTime DateTime)
+AS
+BEGIN
+    IF @version == "v2" THEN
+    @sensors = EXTRACT 
+        Id Guid,
+        Player string,
+        Node int,
+        NodeType string,
+        NodeValue decimal,
+        EventTime DateTime,
+        PartitionId int,
+        EventEnqueuedUtcTime DateTime,
+        EventProcessedUtcTime DateTime
+        FROM "/Staging/Sensor/v2/sensor_{*}.csv"
+        USING Extractors.Csv(skipFirstNRows: 1); 
+        
+    ELSE
+    @sensors = EXTRACT 
+        Id Guid,
+        Player string,
+        Node int,
+        "Unknown" AS NodeType,
+        NodeValue decimal,
+        EventTime DateTime,
+        PartitionId int,
+        EventEnqueuedUtcTime DateTime,
+        EventProcessedUtcTime DateTime
+        FROM "/Staging/Sensor/v1/sensor_00.csv"
+        USING Extractors.Csv(skipFirstNRows: 1);
+    END;
 
-@newrows = 
-SELECT 
-    Id,
-    Code,
-    string.Format(
-    "{0}{1}", 
-    Code, 
-    string.IsNullOrWhiteSpace(
-        Detail.Replace("<span>", "")
-        .Replace("</span>", "")) ? 
-            string.Empty : 
-            ":" + Detail.Replace("<span>", "").Replace("</span>", "")
-        ) AS Detail,
-    (Volume * Units) AS Sold
-FROM @rows;
+@sensorNames = EXTRACT 
+        Id int,
+        NodeName string
+    FROM "/Raw/Sensor/v1/SensorNames.txt"
+    USING Extractors.Tsv();
 
-OUTPUT @newrows
-TO "Sandbox/User1/code-units.csv"
-USING Outputters.Csv(outputHeader:true);
+@result = SELECT
+        s.Id, s.Player, s.Node, s.NodeType,
+        sn.NodeName, s.NodeValue, s.EventTime
+	FROM @sensors AS s
+	INNER JOIN @sensorNames AS sn
+	ON s.Node == sn.Id;
+END;

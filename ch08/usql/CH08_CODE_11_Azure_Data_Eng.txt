@@ -1,15 +1,8 @@
-USE DATABASE Players; 
-CREATE TABLE IF NOT EXISTS SensorData
+USE DATABASE Players;
+CREATE TABLE IF NOT EXISTS SensorNames
 (
-    Id string,
-    Player string,
-    Node int,
-    NodeValue decimal,
-    EventTime DateTime,
-    PartitionId int,
-    EventEnqueuedUtcTime DateTime,
-    EventProcessedUtcTime DateTime,
-    INDEX idx_SensorData CLUSTERED(Node ASC, EventTime ASC)
+    SensorId int,
+    SensorName string,
+    INDEX idx_SensorId CLUSTERED(SensorId ASC)
 )
-PARTITIONED BY (Player)
-DISTRIBUTED BY HASH(Node);
+DISTRIBUTED BY HASH(SensorId);

@@ -1,11 +1,6 @@
-DROP FUNCTION IF EXISTS [fGetFiles];
-CREATE FUNCTION [fGetFiles](@folder string, @prefix string = "{*}")
-RETURNS @files TABLE([field] string, [field2] string)
-AS
-BEGIN
-@files = 
-    EXTRACT [field] string,
-            [field2] string
-    FROM string.Format("/{0}/{1}.csv", @folder, @prefix)
-    USING Extractors.Csv();
-END;
+@view = SELECT s.Id, s.Player, s.Node, sn.NodeName, s.NodeValue, s.EventTime 
+	FROM [Players].[dbo].[f_Sensors]() AS s;
+
+OUTPUT @view
+    TO "/Sandbox/User1/Players.dbo.f_Sensors.tsv"
+    USING Outputters.Tsv();

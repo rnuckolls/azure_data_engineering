@@ -1,17 +1,32 @@
-DROP FUNCTION IF EXISTS [fGetFiles];
-CREATE FUNCTION [fGetFiles]
-(@HandleNulls bool = true, 
- @Replacement string = "UNKNOWN") <1>
-RETURNS @rows TABLE([field] string, [field2] string) <2>
-AS
-BEGIN <3>
-    IF @HandleNulls == true THEN <4>
-        @rows = 
-        SELECT  [field] ?? @Replacement AS [field], 
-                [field2] ?? @Replacement AS [field2]
-                FROM [table];
-    ELSE <5>
-        @rows = 
-        SELECT [field], [field2] FROM [table];
-    END; <6>
+USE DATABASE Players;
+DROP FUNCTION IF EXISTS f_Sensors;
+CREATE FUNCTION f_Sensors ()
+RETURNS @result TABLE(
+    Id Guid, Player string, Node int, NodeName string, 
+    NodeValue decimal, EventTime DateTime)
+    AS  
+BEGIN
+@sensors = EXTRACT 
+        Id Guid,
+        Player string,
+        Node int,
+        NodeValue decimal,
+        EventTime DateTime,
+        PartitionId int,
+        EventEnqueuedUtcTime DateTime,
+        EventProcessedUtcTime DateTime
+    FROM "/Staging/Sensor/v1/sensor_00.csv"
+    USING Extractors.Csv(skipFirstNRows: 1);
+
+@sensorNames = EXTRACT 
+        Id int,
+        NodeName string
+    FROM "/Raw/Sensor/v1/SensorNames.txt"
+    USING Extractors.Tsv();
+
+@result = SELECT
+        s.Id, s.Player, s.Node, sn.NodeName, s.NodeValue, s.EventTime
+	FROM @sensors AS s
+	INNER JOIN @sensorNames AS sn
+	ON s.Node == sn.Id;
 END; <7>

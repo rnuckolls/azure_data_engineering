@@ -1,17 +1,8 @@
-USE DATABASE Players; 
-@data = 
-    EXTRACT 
-    Id string,
-    Player string,
-    Node int,
-    NodeValue decimal,
-    EventTime DateTime,
-    PartitionId int,
-    EventEnqueuedUtcTime DateTime,
-    EventProcessedUtcTime DateTime
-    FROM "/Staging/Sensor/v1/sensor_{*}.csv"
-    USING Extractors.Csv(skipFirstNRows:1);
+@view = SELECT s.Id, s.Player, s.Node, sn.NodeName, s.NodeValue, s.EventTime 
+	FROM [Players].[dbo].[v_Sensors] AS s
+	INNER JOIN [Players].[dbo].[v_SensorNames] AS sn
+	ON s.Node == sn.Id;
 
-INSERT INTO SensorData
-(Id,Player,Node,NodeValue,EventTime,PartitionId,EventEnqueuedUtcTime,EventProcessedUtcTime)
-SELECT * FROM @data;
+OUTPUT @view
+    TO "/Sandbox/User1/Players.dbo.v_Sensors.tsv"
+    USING Outputters.Tsv();
