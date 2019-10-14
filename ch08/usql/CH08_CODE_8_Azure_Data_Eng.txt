@@ -6,8 +6,8 @@ RETURNS @result TABLE(
     NodeName string, NodeValue decimal, EventTime DateTime)
 AS
 BEGIN
-    IF @version == "v2" THEN
-    @sensors = EXTRACT 
+    IF @version == "v2" THEN 
+    @sensors = EXTRACT
         Id Guid,
         Player string,
         Node int,
@@ -17,15 +17,14 @@ BEGIN
         PartitionId int,
         EventEnqueuedUtcTime DateTime,
         EventProcessedUtcTime DateTime
-        FROM "/Staging/Sensor/v2/sensor_{*}.csv"
-        USING Extractors.Csv(skipFirstNRows: 1); 
-        
+        FROM "/Staging/Sensor/v2/sensor_{*}.csv" 
+        USING Extractors.Csv(skipFirstNRows: 1);
+
     ELSE
-    @sensors = EXTRACT 
+    @sensorLoad = EXTRACT
         Id Guid,
         Player string,
         Node int,
-        "Unknown" AS NodeType,
         NodeValue decimal,
         EventTime DateTime,
         PartitionId int,
@@ -33,16 +32,21 @@ BEGIN
         EventProcessedUtcTime DateTime
         FROM "/Staging/Sensor/v1/sensor_00.csv"
         USING Extractors.Csv(skipFirstNRows: 1);
+
+    @sensors = SELECT
+        Id, Player, Node, "Unknown" AS NodeType, NodeValue,
+        EventTime, PartitionId, EventEnqueuedUtcTime, EventProcessedUtcTime
+        FROM @sensorLoad;
     END;
 
-@sensorNames = EXTRACT 
+@sensorNames = EXTRACT
         Id int,
         NodeName string
     FROM "/Raw/Sensor/v1/SensorNames.txt"
     USING Extractors.Tsv();
 
 @result = SELECT
-        s.Id, s.Player, s.Node, s.NodeType,
+        s.Id, s.Player, s.Node, s.NodeType, 
         sn.NodeName, s.NodeValue, s.EventTime
 	FROM @sensors AS s
 	INNER JOIN @sensorNames AS sn
