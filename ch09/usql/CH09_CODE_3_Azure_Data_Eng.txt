@@ -1,4 +1,0 @@
-USE DATABASE Players;
-USING Players.Formats;
-
-DECLARE EXTERNAL @in string = "/Staging/Sensor/v2/{*}.json";

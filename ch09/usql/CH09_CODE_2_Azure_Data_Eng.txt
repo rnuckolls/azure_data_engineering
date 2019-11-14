@@ -1,6 +1,0 @@
-Submit-AzDataLakeAnalyticsJob -Account "adedeveastus2" -Name "Register Formats" -Script "
-USE DATABASE Players;
-CREATE ASSEMBLY IF NOT EXISTS Avro FROM `"/Code/Assemblies/Microsoft/Formats/v1/Avro.dll`";
-CREATE ASSEMBLY IF NOT EXISTS log4net FROM `"/Code/Assemblies/Microsoft/Formats/v1/log4net.dll`";
-CREATE ASSEMBLY IF NOT EXISTS Json FROM `"/Code/Assemblies/Microsoft/Formats/v1/Newtonsoft.Json.dll`";
-CREATE ASSEMBLY IF NOT EXISTS Formats FROM `"/Code/Assemblies/Microsoft/Formats/v1/Microsoft.Analytics.Samples.Formats.dll`";" -AnalyticsUnits 1 

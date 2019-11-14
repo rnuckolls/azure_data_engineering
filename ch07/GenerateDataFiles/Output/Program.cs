@@ -13,6 +13,7 @@ namespace Output
             var files = 10;
             Console.WriteLine($"Writing {length} records.");
             var players = new string[] { "abera101", "jstro101", "jstro102", "mpete101", "mjone101", "kline101", "pharv101", "pharv102", "mharr101", "lgime101" };
+            var types = new string[] {"Temperature","Magnetic","Pressure","Strain","Oxygen"};
             
             var holders = new List<Sensor>();
             var r = new Random();
@@ -24,8 +25,10 @@ namespace Output
                 {
                     var holder = new Sensor();
                     holder.Id = Guid.NewGuid();
-                    holder.Player = players[r.Next(0, 10)];
+                    //holder.Player = players[r.Next(0, 10)];
+                    holder.Player = players[j];
                     holder.Node = r.Next(1, 40);
+                    holder.NodeType = types[r.Next(0,5)];
                     holder.NodeValue = decimal.Round((decimal)(r.Next(0, 512) + r.NextDouble()), 2, MidpointRounding.AwayFromZero);
                     holder.EventTime = DateTime.UtcNow;
                     holder.PartitionId = r.Next(0, 8);
@@ -56,6 +59,7 @@ namespace Output
         public Guid Id { get; set; }
         public string Player { get; set; }
         public int Node { get; set; }
+        public string NodeType { get; set; }
         public decimal NodeValue { get; set; }
         public DateTime EventTime { get; set; }
         public int PartitionId { get; set; }

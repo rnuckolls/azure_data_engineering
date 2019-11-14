@@ -1,0 +1,4 @@
+Submit-AzDataLakeAnalyticsJob -Account "adedeveastus2" 
+<linearrow />-Name "Create DB" 
+<linearrow />-Script "CREATE DATABASE IF NOT EXISTS Players;" 
+<linearrow />-AnalyticsUnits 1 
