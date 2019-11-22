@@ -1,4 +1,4 @@
-﻿USE DATABASE master;
+USE DATABASE master;
 
 DROP ASSEMBLY IF EXISTS [ImageCommon];
 CREATE ASSEMBLY IF NOT EXISTS [ImageCommon]
