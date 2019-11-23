@@ -1,0 +1,17 @@
+USE DATABASE Players;
+
+DROP ASSEMBLY IF EXISTS [Avro];
+CREATE ASSEMBLY [Avro]
+FROM @"/Code/Assemblies/Players/v1/Avro.dll";
+
+DROP ASSEMBLY IF EXISTS [log4net];
+CREATE ASSEMBLY [log4net]
+FROM @"/Code/Assemblies/Players/v1/log4net.dll";
+
+DROP ASSEMBLY IF EXISTS [Newtonsoft.Json];
+CREATE ASSEMBLY [Newtonsoft.Json]
+FROM @"/Code/Assemblies/Players/v1/Newtonsoft.Json.dll";
+
+DROP ASSEMBLY IF EXISTS [Microsoft.Analytics.Samples.Formats];
+CREATE ASSSEMBLY [Microsoft.Analytics.Samples.Formats]
+FROM @"/Code/Assemblies/Players/v1/Microsoft.Analytics.Samples.Formats.dll";
