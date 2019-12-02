@@ -1,0 +1,1083 @@
+{
+  "@context": [
+    "https://raw.githubusercontent.com/geojson/geojson-ld/master/contexts/geojson-base.jsonld",
+    {
+      "wx": "https://api.weather.gov/ontology#",
+      "s": "https://schema.org/",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#",
+      "position": {
+        "@id": "s:GeoCoordinates",
+        "@type": "geo:wktLiteral"
+      },
+      "city": "s:addressLocality",
+      "state": "s:addressRegion",
+      "distance": {
+        "@id": "s:Distance",
+        "@type": "s:QuantitativeValue"
+      },
+      "bearing": {
+        "@type": "s:QuantitativeValue"
+      },
+      "value": {
+        "@id": "s:value"
+      },
+      "unitCode": {
+        "@id": "s:unitCode",
+        "@type": "@id"
+      },
+      "forecastOffice": {
+        "@type": "@id"
+      },
+      "forecastGridData": {
+        "@type": "@id"
+      },
+      "publicZone": {
+        "@type": "@id"
+      },
+      "county": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ001",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ001",
+        "@type": "wx:Zone",
+        "id": "IDZ001",
+        "type": "public",
+        "name": "Northern Panhandle",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ002",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ002",
+        "@type": "wx:Zone",
+        "id": "IDZ002",
+        "type": "public",
+        "name": "Coeur d'Alene Area",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ003",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ003",
+        "@type": "wx:Zone",
+        "id": "IDZ003",
+        "type": "public",
+        "name": "Idaho Palouse",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ004",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ004",
+        "@type": "wx:Zone",
+        "id": "IDZ004",
+        "type": "public",
+        "name": "Central Panhandle Mountains",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ005",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ005",
+        "@type": "wx:Zone",
+        "id": "IDZ005",
+        "type": "public",
+        "name": "Northern Clearwater Mountains",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ006",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ006",
+        "@type": "wx:Zone",
+        "id": "IDZ006",
+        "type": "public",
+        "name": "Southern Clearwater Mountains",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Boise",
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ007",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ007",
+        "@type": "wx:Zone",
+        "id": "IDZ007",
+        "type": "public",
+        "name": "Orofino/Grangeville Region",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ008",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ008",
+        "@type": "wx:Zone",
+        "id": "IDZ008",
+        "type": "public",
+        "name": "Lower Hells Canyon/Salmon River Region",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Boise",
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ009",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ009",
+        "@type": "wx:Zone",
+        "id": "IDZ009",
+        "type": "public",
+        "name": "Western Lemhi County",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ010",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ010",
+        "@type": "wx:Zone",
+        "id": "IDZ010",
+        "type": "public",
+        "name": "Eastern Lemhi County",
+        "state": "ID",
+        "cwa": [
+          "MSO"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/MSO"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ011",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ011",
+        "@type": "wx:Zone",
+        "id": "IDZ011",
+        "type": "public",
+        "name": "West Central Mountains",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ012",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ012",
+        "@type": "wx:Zone",
+        "id": "IDZ012",
+        "type": "public",
+        "name": "Lower Treasure Valley",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ013",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ013",
+        "@type": "wx:Zone",
+        "id": "IDZ013",
+        "type": "public",
+        "name": "Boise Mountains",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ014",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ014",
+        "@type": "wx:Zone",
+        "id": "IDZ014",
+        "type": "public",
+        "name": "Upper Treasure Valley",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ015",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ015",
+        "@type": "wx:Zone",
+        "id": "IDZ015",
+        "type": "public",
+        "name": "Southwest Highlands",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ016",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ016",
+        "@type": "wx:Zone",
+        "id": "IDZ016",
+        "type": "public",
+        "name": "Western Magic Valley",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ026",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ026",
+        "@type": "wx:Zone",
+        "id": "IDZ026",
+        "type": "public",
+        "name": "Lewiston Area",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ027",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ027",
+        "@type": "wx:Zone",
+        "id": "IDZ027",
+        "type": "public",
+        "name": "Lewis and Southern Nez Perce Counties",
+        "state": "ID",
+        "cwa": [
+          "OTX"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/OTX"
+        ],
+        "timeZone": [
+          "America/Los_Angeles"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ028",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ028",
+        "@type": "wx:Zone",
+        "id": "IDZ028",
+        "type": "public",
+        "name": "Camas Prairie",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ029",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ029",
+        "@type": "wx:Zone",
+        "id": "IDZ029",
+        "type": "public",
+        "name": "Owyhee Mountains",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ030",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ030",
+        "@type": "wx:Zone",
+        "id": "IDZ030",
+        "type": "public",
+        "name": "Southern Twin  Falls County",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ033",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ033",
+        "@type": "wx:Zone",
+        "id": "IDZ033",
+        "type": "public",
+        "name": "Upper Weiser River",
+        "state": "ID",
+        "cwa": [
+          "BOI"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/BOI"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ051",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ051",
+        "@type": "wx:Zone",
+        "id": "IDZ051",
+        "type": "public",
+        "name": "Shoshone/Lava Beds",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ052",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ052",
+        "@type": "wx:Zone",
+        "id": "IDZ052",
+        "type": "public",
+        "name": "Arco/Mud Lake Desert",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ053",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ053",
+        "@type": "wx:Zone",
+        "id": "IDZ053",
+        "type": "public",
+        "name": "Upper Snake River Plain",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ054",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ054",
+        "@type": "wx:Zone",
+        "id": "IDZ054",
+        "type": "public",
+        "name": "Lower Snake River Plain",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ055",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ055",
+        "@type": "wx:Zone",
+        "id": "IDZ055",
+        "type": "public",
+        "name": "Eastern Magic Valley",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ056",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ056",
+        "@type": "wx:Zone",
+        "id": "IDZ056",
+        "type": "public",
+        "name": "Southern Hills/Albion Mountains",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ057",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ057",
+        "@type": "wx:Zone",
+        "id": "IDZ057",
+        "type": "public",
+        "name": "Raft River Region",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ058",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ058",
+        "@type": "wx:Zone",
+        "id": "IDZ058",
+        "type": "public",
+        "name": "Marsh and Arbon Highlands",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ059",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ059",
+        "@type": "wx:Zone",
+        "id": "IDZ059",
+        "type": "public",
+        "name": "Franklin/Eastern Oneida Region",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ060",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ060",
+        "@type": "wx:Zone",
+        "id": "IDZ060",
+        "type": "public",
+        "name": "Bear River Range",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ061",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ061",
+        "@type": "wx:Zone",
+        "id": "IDZ061",
+        "type": "public",
+        "name": "Bear Lake Valley",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ062",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ062",
+        "@type": "wx:Zone",
+        "id": "IDZ062",
+        "type": "public",
+        "name": "Blackfoot Mountains",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ063",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ063",
+        "@type": "wx:Zone",
+        "id": "IDZ063",
+        "type": "public",
+        "name": "Caribou Range",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ064",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ064",
+        "@type": "wx:Zone",
+        "id": "IDZ064",
+        "type": "public",
+        "name": "Big Hole Mountains",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ065",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ065",
+        "@type": "wx:Zone",
+        "id": "IDZ065",
+        "type": "public",
+        "name": "Teton Valley",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ066",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ066",
+        "@type": "wx:Zone",
+        "id": "IDZ066",
+        "type": "public",
+        "name": "Centennial Mountains/Island Park",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ067",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ067",
+        "@type": "wx:Zone",
+        "id": "IDZ067",
+        "type": "public",
+        "name": "Beaverhead/Lemhi Highlands",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ068",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ068",
+        "@type": "wx:Zone",
+        "id": "IDZ068",
+        "type": "public",
+        "name": "Lost River Valleys",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ069",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ069",
+        "@type": "wx:Zone",
+        "id": "IDZ069",
+        "type": "public",
+        "name": "Lost River Range",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ070",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ070",
+        "@type": "wx:Zone",
+        "id": "IDZ070",
+        "type": "public",
+        "name": "Challis/Pahsimeroi Valleys",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ071",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ071",
+        "@type": "wx:Zone",
+        "id": "IDZ071",
+        "type": "public",
+        "name": "Frank Church Wilderness",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ072",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ072",
+        "@type": "wx:Zone",
+        "id": "IDZ072",
+        "type": "public",
+        "name": "Sawtooth/Stanley Basin",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ073",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ073",
+        "@type": "wx:Zone",
+        "id": "IDZ073",
+        "type": "public",
+        "name": "Sun Valley Region",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ074",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ074",
+        "@type": "wx:Zone",
+        "id": "IDZ074",
+        "type": "public",
+        "name": "Big Lost Highlands/Copper Basin",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    },
+    {
+      "id": "https://api.weather.gov/zones/forecast/IDZ075",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "@id": "https://api.weather.gov/zones/forecast/IDZ075",
+        "@type": "wx:Zone",
+        "id": "IDZ075",
+        "type": "public",
+        "name": "Wood River Foothills",
+        "state": "ID",
+        "cwa": [
+          "PIH"
+        ],
+        "forecastOffices": [
+          "https://api.weather.gov/offices/PIH"
+        ],
+        "timeZone": [
+          "America/Boise"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1343 @@
+{
+    "@context": {
+        "@vocab": "https://api.weather.gov/ontology#"
+    },
+    "@graph": [
+        {
+            "productCode": "ABV",
+            "productName": "Rawinsonde Data Above 100 Millibars"
+        },
+        {
+            "productCode": "ADA",
+            "productName": "Alarm/Alert Administrative Msg"
+        },
+        {
+            "productCode": "ADM",
+            "productName": "Alert Administrative Message"
+        },
+        {
+            "productCode": "ADR",
+            "productName": "NWS Administrative Message"
+        },
+        {
+            "productCode": "ADV",
+            "productName": "Generic Space Environment Advisory"
+        },
+        {
+            "productCode": "AFD",
+            "productName": "Area Forecast Discussion"
+        },
+        {
+            "productCode": "AFM",
+            "productName": "Area Forecast Matrices"
+        },
+        {
+            "productCode": "AFP",
+            "productName": "Area Forecast Product"
+        },
+        {
+            "productCode": "AFW",
+            "productName": "Fire Weather Matrix"
+        },
+        {
+            "productCode": "AGF",
+            "productName": "Agricultural Forecast"
+        },
+        {
+            "productCode": "AGO",
+            "productName": "Agricultural Observations"
+        },
+        {
+            "productCode": "ALT",
+            "productName": "Space Environment Alert"
+        },
+        {
+            "productCode": "AQA",
+            "productName": "Air Quality Alert"
+        },
+        {
+            "productCode": "AQI",
+            "productName": "Air Quality Index Statement"
+        },
+        {
+            "productCode": "ASA",
+            "productName": "Air Stagnation Advisory"
+        },
+        {
+            "productCode": "AVA",
+            "productName": "Avalanche Watch"
+        },
+        {
+            "productCode": "AVW",
+            "productName": "Avalanche Warning"
+        },
+        {
+            "productCode": "AWO",
+            "productName": "Area Weather Outlook"
+        },
+        {
+            "productCode": "AWS",
+            "productName": "Area Weather Summary"
+        },
+        {
+            "productCode": "AWU",
+            "productName": "Area Weather Update"
+        },
+        {
+            "productCode": "AWW",
+            "productName": "Airport Weather Warning"
+        },
+        {
+            "productCode": "BOY",
+            "productName": "Buoy Report"
+        },
+        {
+            "productCode": "BRG",
+            "productName": "Coast Guard Observations"
+        },
+        {
+            "productCode": "BRT",
+            "productName": "Hourly Roundup for Weather Radio"
+        },
+        {
+            "productCode": "CAE",
+            "productName": "Child Abduction Emergency"
+        },
+        {
+            "productCode": "CAP",
+            "productName": "Common Alerting Protocol"
+        },
+        {
+            "productCode": "CCF",
+            "productName": "Coded City Forecast"
+        },
+        {
+            "productCode": "CDW",
+            "productName": "Civil Danger Warning"
+        },
+        {
+            "productCode": "CEM",
+            "productName": "Civil Emergency Message"
+        },
+        {
+            "productCode": "CF6",
+            "productName": "WFO Monthly/Daily Climate Data"
+        },
+        {
+            "productCode": "CFP",
+            "productName": "Convective Forecast Product"
+        },
+        {
+            "productCode": "CFW",
+            "productName": "Coastal Flood Warnings/Watches/Statements"
+        },
+        {
+            "productCode": "CGR",
+            "productName": "Coast Guard Surface Report"
+        },
+        {
+            "productCode": "CHG",
+            "productName": "Computer Hurricane Guidance"
+        },
+        {
+            "productCode": "CLA",
+            "productName": "Climatological Report (Annual)"
+        },
+        {
+            "productCode": "CLI",
+            "productName": "Climatological Report (Daily)"
+        },
+        {
+            "productCode": "CLM",
+            "productName": "Climatological Report (Monthly)"
+        },
+        {
+            "productCode": "CLQ",
+            "productName": "Climatological Report (Quarterly)"
+        },
+        {
+            "productCode": "CLS",
+            "productName": "Climatological Report (Seasonal)"
+        },
+        {
+            "productCode": "CLT",
+            "productName": "Climate Report"
+        },
+        {
+            "productCode": "CMM",
+            "productName": "Coded Climatological Monthly Means"
+        },
+        {
+            "productCode": "COD",
+            "productName": "Coded Analysis and Forecasts"
+        },
+        {
+            "productCode": "CPF",
+            "productName": "Great Lakes Port Forecast"
+        },
+        {
+            "productCode": "CUR",
+            "productName": "Routine Space Environment Products"
+        },
+        {
+            "productCode": "CWA",
+            "productName": "Center (CWSU) Weather Advisory"
+        },
+        {
+            "productCode": "CWF",
+            "productName": "Coastal Waters Forecast"
+        },
+        {
+            "productCode": "CWS",
+            "productName": "Center (CWSU) Weather Statement"
+        },
+        {
+            "productCode": "DAY",
+            "productName": "Routine Space Environment Product (Daily)"
+        },
+        {
+            "productCode": "DDO",
+            "productName": "Daily Dispersion Outlook"
+        },
+        {
+            "productCode": "DGT",
+            "productName": "Drought Information Statement"
+        },
+        {
+            "productCode": "DSA",
+            "productName": "Unnumbered Depression / Suspicious Area Advisory"
+        },
+        {
+            "productCode": "DSM",
+            "productName": "ASOS Daily Summary"
+        },
+        {
+            "productCode": "DSW",
+            "productName": "Dust Storm Warning"
+        },
+        {
+            "productCode": "EFP",
+            "productName": "3 To 5 Day Extended Forecast"
+        },
+        {
+            "productCode": "EOL",
+            "productName": "Average 6 To 10 Day Weather Outlook (Local)"
+        },
+        {
+            "productCode": "EQI",
+            "productName": "Tsunami Bulletin"
+        },
+        {
+            "productCode": "EQR",
+            "productName": "Earthquake Report"
+        },
+        {
+            "productCode": "EQW",
+            "productName": "Earthquake Warning"
+        },
+        {
+            "productCode": "ESF",
+            "productName": "Flood Potential Outlook"
+        },
+        {
+            "productCode": "ESG",
+            "productName": "Extended Streamflow Guidance"
+        },
+        {
+            "productCode": "ESP",
+            "productName": "Extended Streamflow Prediction"
+        },
+        {
+            "productCode": "ESS",
+            "productName": "Water Supply Outlook"
+        },
+        {
+            "productCode": "EVI",
+            "productName": "Evacuation Immediate"
+        },
+        {
+            "productCode": "EWW",
+            "productName": "Extreme Wind Warning"
+        },
+        {
+            "productCode": "FA0",
+            "productName": "Aviation Area Forecasts (Pacific)"
+        },
+        {
+            "productCode": "FA1",
+            "productName": "Aviation Area Forecasts (Northeast)"
+        },
+        {
+            "productCode": "FA2",
+            "productName": "Aviation Area Forecasts (Southeast)"
+        },
+        {
+            "productCode": "FA3",
+            "productName": "Aviation Area Forecasts (North Central)"
+        },
+        {
+            "productCode": "FA4",
+            "productName": "Aviation Area Forecasts (South Central)"
+        },
+        {
+            "productCode": "FA5",
+            "productName": "Aviation Area Forecasts (Rocky Mountains)"
+        },
+        {
+            "productCode": "FA6",
+            "productName": "Aviation Area Forecasts (West Coast)"
+        },
+        {
+            "productCode": "FA7",
+            "productName": "Aviation Area Forecasts (Juneau, AK)"
+        },
+        {
+            "productCode": "FA8",
+            "productName": "Aviation Area Forecasts (Anchorage, AK)"
+        },
+        {
+            "productCode": "FA9",
+            "productName": "Aviation Area Forecasts (Fairbanks, AK)"
+        },
+        {
+            "productCode": "FD0",
+            "productName": "24 Hr Fd Winds Aloft Fcst (45,000 and 53,000 Ft)"
+        },
+        {
+            "productCode": "FD1",
+            "productName": "6 Hour Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD2",
+            "productName": "12 Hour Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD3",
+            "productName": "24 Hour Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD4",
+            "productName": "Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD5",
+            "productName": "Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD6",
+            "productName": "Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD7",
+            "productName": "Winds Aloft Forecast"
+        },
+        {
+            "productCode": "FD8",
+            "productName": "6 Hour Fd Winds Aloft Fcst (45,000 and 53,000 Ft)"
+        },
+        {
+            "productCode": "FD9",
+            "productName": "12 Hr Fd Winds Aloft Fcst (45,000 and 53,000 Ft)"
+        },
+        {
+            "productCode": "FDI",
+            "productName": "Fire Danger Indices"
+        },
+        {
+            "productCode": "FFA",
+            "productName": "Flash Flood Watch"
+        },
+        {
+            "productCode": "FFG",
+            "productName": "Flash Flood Guidance"
+        },
+        {
+            "productCode": "FFH",
+            "productName": "Headwater Guidance"
+        },
+        {
+            "productCode": "FFS",
+            "productName": "Flash Flood Statement"
+        },
+        {
+            "productCode": "FFW",
+            "productName": "Flash Flood Warning"
+        },
+        {
+            "productCode": "FLN",
+            "productName": "National Flood Summary"
+        },
+        {
+            "productCode": "FLS",
+            "productName": "Flood Statement"
+        },
+        {
+            "productCode": "FLW",
+            "productName": "Flood Warning"
+        },
+        {
+            "productCode": "FOF",
+            "productName": "Upper Wind Fallout Forecast"
+        },
+        {
+            "productCode": "FRW",
+            "productName": "Fire Warning"
+        },
+        {
+            "productCode": "FSH",
+            "productName": "Natl Marine Fisheries Administrative Service Message"
+        },
+        {
+            "productCode": "FTM",
+            "productName": "WSR-88D Radar Outage Notification / Free Text Message"
+        },
+        {
+            "productCode": "FTP",
+            "productName": "FOUS Prog Max/Min Temp/Pop Guidance"
+        },
+        {
+            "productCode": "FWA",
+            "productName": "Fire Weather Administrative Message"
+        },
+        {
+            "productCode": "FWD",
+            "productName": "Fire Weather Outlook Discussion"
+        },
+        {
+            "productCode": "FWF",
+            "productName": "Routine Fire Wx Fcst (With/Without 6-10 Day Outlook)"
+        },
+        {
+            "productCode": "FWL",
+            "productName": "Land Management Forecasts"
+        },
+        {
+            "productCode": "FWM",
+            "productName": "Miscellaneous Fire Weather Product"
+        },
+        {
+            "productCode": "FWN",
+            "productName": "Fire Weather Notification"
+        },
+        {
+            "productCode": "FWO",
+            "productName": "Fire Weather Observation"
+        },
+        {
+            "productCode": "FWS",
+            "productName": "Suppression Forecast"
+        },
+        {
+            "productCode": "FZL",
+            "productName": "Freezing Level Data (RADAT)"
+        },
+        {
+            "productCode": "GLF",
+            "productName": "Great Lakes Forecast"
+        },
+        {
+            "productCode": "GLS",
+            "productName": "Great Lakes Storm Summary"
+        },
+        {
+            "productCode": "GRE",
+            "productName": "GREEN"
+        },
+        {
+            "productCode": "HD1",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD2",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD3",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD4",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD7",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD8",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HD9",
+            "productName": "RFC Derived QPF Data Product"
+        },
+        {
+            "productCode": "HLS",
+            "productName": "Hurricane Local Statement"
+        },
+        {
+            "productCode": "HMD",
+            "productName": "Hydrometeorological Discussion"
+        },
+        {
+            "productCode": "HML",
+            "productName": "AHPS XML"
+        },
+        {
+            "productCode": "HMW",
+            "productName": "Hazardous Materials Warning"
+        },
+        {
+            "productCode": "HP1",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP2",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP3",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP4",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP5",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP6",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP7",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HP8",
+            "productName": "RFC QPF Verification Product"
+        },
+        {
+            "productCode": "HRR",
+            "productName": "Weather Roundup"
+        },
+        {
+            "productCode": "HSF",
+            "productName": "High Seas Forecast"
+        },
+        {
+            "productCode": "HWO",
+            "productName": "Hazardous Weather Outlook"
+        },
+        {
+            "productCode": "HWR",
+            "productName": "Hourly Weather Roundup"
+        },
+        {
+            "productCode": "HYD",
+            "productName": "Daily Hydrometeorological Products"
+        },
+        {
+            "productCode": "HYM",
+            "productName": "Monthly Hydrometeorological Plain Language Product"
+        },
+        {
+            "productCode": "ICE",
+            "productName": "Ice Forecast"
+        },
+        {
+            "productCode": "IDM",
+            "productName": "Ice Drift Vectors"
+        },
+        {
+            "productCode": "INI",
+            "productName": "ADMINISTR [NOUS51 KWBC]"
+        },
+        {
+            "productCode": "IOB",
+            "productName": "Ice Observation"
+        },
+        {
+            "productCode": "KPA",
+            "productName": "Keep Alive Message"
+        },
+        {
+            "productCode": "LAE",
+            "productName": "Local Area Emergency"
+        },
+        {
+            "productCode": "LCD",
+            "productName": "Preliminary Local Climatological Data"
+        },
+        {
+            "productCode": "LCO",
+            "productName": "Local Cooperative Observation"
+        },
+        {
+            "productCode": "LEW",
+            "productName": "Law Enforcement Warning"
+        },
+        {
+            "productCode": "LFP",
+            "productName": "Local Forecast"
+        },
+        {
+            "productCode": "LKE",
+            "productName": "Lake Stages"
+        },
+        {
+            "productCode": "LLS",
+            "productName": "Low-Level Sounding"
+        },
+        {
+            "productCode": "LOW",
+            "productName": "Low Temperatures"
+        },
+        {
+            "productCode": "LSR",
+            "productName": "Local Storm Report"
+        },
+        {
+            "productCode": "LTG",
+            "productName": "Lightning Data"
+        },
+        {
+            "productCode": "MAN",
+            "productName": "Rawinsonde Observation Mandatory Levels"
+        },
+        {
+            "productCode": "MAP",
+            "productName": "Mean Areal Precipitation"
+        },
+        {
+            "productCode": "MAW",
+            "productName": "Amended Marine Forecast"
+        },
+        {
+            "productCode": "MIM",
+            "productName": "Marine Interpretation Message"
+        },
+        {
+            "productCode": "MIS",
+            "productName": "Miscellaneous Local Product"
+        },
+        {
+            "productCode": "MOB",
+            "productName": "MOB Observations"
+        },
+        {
+            "productCode": "MON",
+            "productName": "Routine Space Environment Product Issued Monthly"
+        },
+        {
+            "productCode": "MRP",
+            "productName": "Techniques Development Laboratory Marine Product"
+        },
+        {
+            "productCode": "MSM",
+            "productName": "ASOS Monthly Summary Message"
+        },
+        {
+            "productCode": "MTR",
+            "productName": "METAR Formatted Surface Weather Observation"
+        },
+        {
+            "productCode": "MTT",
+            "productName": "METAR Test Message"
+        },
+        {
+            "productCode": "MVF",
+            "productName": "Marine Verification Coded Message"
+        },
+        {
+            "productCode": "MWS",
+            "productName": "Marine Weather Statement"
+        },
+        {
+            "productCode": "MWW",
+            "productName": "Marine Weather Message"
+        },
+        {
+            "productCode": "NOU",
+            "productName": "Weather Reconnaisance Flights"
+        },
+        {
+            "productCode": "NOW",
+            "productName": "Short Term Forecast"
+        },
+        {
+            "productCode": "NOX",
+            "productName": "Data Mgt Message"
+        },
+        {
+            "productCode": "NPW",
+            "productName": "Non-Precipitation Warnings / Watches / Advisories"
+        },
+        {
+            "productCode": "NSH",
+            "productName": "Nearshore Marine Forecast"
+        },
+        {
+            "productCode": "NUW",
+            "productName": "Nuclear Power Plant Warning"
+        },
+        {
+            "productCode": "NWR",
+            "productName": "NOAA Weather Radio Forecast"
+        },
+        {
+            "productCode": "OAV",
+            "productName": "Other Aviation Products"
+        },
+        {
+            "productCode": "OBS",
+            "productName": "Observations"
+        },
+        {
+            "productCode": "OFA",
+            "productName": "Offshore Aviation Area Forecast"
+        },
+        {
+            "productCode": "OFF",
+            "productName": "Offshore Forecast"
+        },
+        {
+            "productCode": "OMR",
+            "productName": "Other Marine Products"
+        },
+        {
+            "productCode": "OPU",
+            "productName": "Other Public Products"
+        },
+        {
+            "productCode": "OSO",
+            "productName": "Other Surface Observations"
+        },
+        {
+            "productCode": "OSW",
+            "productName": "Ocean Surface Winds"
+        },
+        {
+            "productCode": "OUA",
+            "productName": "Other Upper Air Data"
+        },
+        {
+            "productCode": "OZF",
+            "productName": "Zone Forecast"
+        },
+        {
+            "productCode": "PFM",
+            "productName": "Point Forecast Matrices"
+        },
+        {
+            "productCode": "PFW",
+            "productName": "Fire Weather Point Forecast Matrices"
+        },
+        {
+            "productCode": "PLS",
+            "productName": "Plain Language Ship Report"
+        },
+        {
+            "productCode": "PMD",
+            "productName": "Prognostic Meteorological Discussion"
+        },
+        {
+            "productCode": "PNS",
+            "productName": "Public Information Statement"
+        },
+        {
+            "productCode": "POE",
+            "productName": "Probability of Exceed"
+        },
+        {
+            "productCode": "PRB",
+            "productName": "Heat Index Forecast Tables"
+        },
+        {
+            "productCode": "PRC",
+            "productName": "State Pilot Report Collective"
+        },
+        {
+            "productCode": "PRE",
+            "productName": "Preliminary Forecasts"
+        },
+        {
+            "productCode": "PSH",
+            "productName": "Post Storm Hurricane Report"
+        },
+        {
+            "productCode": "PTS",
+            "productName": "Probabilistic Outlook Points"
+        },
+        {
+            "productCode": "PWO",
+            "productName": "Public Severe Weather Outlook"
+        },
+        {
+            "productCode": "PWS",
+            "productName": "Tropical Cyclone Probabilities"
+        },
+        {
+            "productCode": "QPF",
+            "productName": "Quantitative Precipitation Forecast"
+        },
+        {
+            "productCode": "QPS",
+            "productName": "Quantitative Precipitation Statement"
+        },
+        {
+            "productCode": "RDF",
+            "productName": "Revised Digital Forecast"
+        },
+        {
+            "productCode": "REC",
+            "productName": "Recreational Report"
+        },
+        {
+            "productCode": "RER",
+            "productName": "Record Report"
+        },
+        {
+            "productCode": "RET",
+            "productName": "EAS Activation Request"
+        },
+        {
+            "productCode": "RFD",
+            "productName": "Rangeland Fire Danger Forecast"
+        },
+        {
+            "productCode": "RFI",
+            "productName": "RFI Observation"
+        },
+        {
+            "productCode": "RFR",
+            "productName": "Route Forecast"
+        },
+        {
+            "productCode": "RFW",
+            "productName": "Red Flag Warning"
+        },
+        {
+            "productCode": "RHW",
+            "productName": "Radiological Hazard Warning"
+        },
+        {
+            "productCode": "RNS",
+            "productName": "Rain Information Statement"
+        },
+        {
+            "productCode": "RR1",
+            "productName": "Hydro-Met Data Report Part 1"
+        },
+        {
+            "productCode": "RR2",
+            "productName": "Hydro-Met Data Report Part 2"
+        },
+        {
+            "productCode": "RR3",
+            "productName": "Hydro-Met Data Report Part 3"
+        },
+        {
+            "productCode": "RR4",
+            "productName": "Hydro-Met Data Report Part 4"
+        },
+        {
+            "productCode": "RR5",
+            "productName": "Hydro-Met Data Report Part 5"
+        },
+        {
+            "productCode": "RR6",
+            "productName": "Hydro-Met Data Report Part 6"
+        },
+        {
+            "productCode": "RR7",
+            "productName": "Hydro-Met Data Report Part 7"
+        },
+        {
+            "productCode": "RR8",
+            "productName": "Hydro-Met Data Report Part 8"
+        },
+        {
+            "productCode": "RR9",
+            "productName": "Hydro-Met Data Report Part 9"
+        },
+        {
+            "productCode": "RRA",
+            "productName": "Automated Hydrologic Observation Sta Report (AHOS)"
+        },
+        {
+            "productCode": "RRM",
+            "productName": "Miscellaneous Hydrologic Data"
+        },
+        {
+            "productCode": "RRS",
+            "productName": "HADS Data"
+        },
+        {
+            "productCode": "RRY",
+            "productName": "ASOS SHEF Hourly Routine Test Message"
+        },
+        {
+            "productCode": "RSD",
+            "productName": "Daily Snotel Data"
+        },
+        {
+            "productCode": "RSM",
+            "productName": "Monthly Snotel Data"
+        },
+        {
+            "productCode": "RTP",
+            "productName": "Regional Max/Min Temp and Precipitation Table"
+        },
+        {
+            "productCode": "RVA",
+            "productName": "River Summary"
+        },
+        {
+            "productCode": "RVD",
+            "productName": "Daily River Forecasts"
+        },
+        {
+            "productCode": "RVF",
+            "productName": "River Forecast"
+        },
+        {
+            "productCode": "RVI",
+            "productName": "River Ice Statement"
+        },
+        {
+            "productCode": "RVM",
+            "productName": "Miscellaneous River Product"
+        },
+        {
+            "productCode": "RVR",
+            "productName": "River Recreation Statement"
+        },
+        {
+            "productCode": "RVS",
+            "productName": "River Statement"
+        },
+        {
+            "productCode": "RWR",
+            "productName": "Regional Weather Roundup"
+        },
+        {
+            "productCode": "RWS",
+            "productName": "Regional Weather Summary"
+        },
+        {
+            "productCode": "SAB",
+            "productName": "Special Avalanche Bulletin"
+        },
+        {
+            "productCode": "SAF",
+            "productName": "Speci Agri Wx Fcst / Advisory / Flying Farmer Fcst Outlook"
+        },
+        {
+            "productCode": "SAG",
+            "productName": "Snow Avalanche Guidance"
+        },
+        {
+            "productCode": "SAT",
+            "productName": "APT Prediction"
+        },
+        {
+            "productCode": "SAW",
+            "productName": "Prelim Notice of Watch &amp; Cancellation Msg (Aviation)"
+        },
+        {
+            "productCode": "SCC",
+            "productName": "Storm Summary"
+        },
+        {
+            "productCode": "SCD",
+            "productName": "Supplementary Climatological Data (ASOS)"
+        },
+        {
+            "productCode": "SCN",
+            "productName": "Soil Climate Analysis Network Data"
+        },
+        {
+            "productCode": "SCP",
+            "productName": "Satellite Cloud Product"
+        },
+        {
+            "productCode": "SCS",
+            "productName": "Selected Cities Summary"
+        },
+        {
+            "productCode": "SDO",
+            "productName": "Supplementary Data Observation (ASOS)"
+        },
+        {
+            "productCode": "SDS",
+            "productName": "Special Dispersion Statement"
+        },
+        {
+            "productCode": "SEL",
+            "productName": "Severe Local Storm Watch and Watch Cancellation Msg"
+        },
+        {
+            "productCode": "SEV",
+            "productName": "SPC Watch Point Information Message"
+        },
+        {
+            "productCode": "SFP",
+            "productName": "State Forecast"
+        },
+        {
+            "productCode": "SFT",
+            "productName": "Tabular State Forecast"
+        },
+        {
+            "productCode": "SGL",
+            "productName": "Rawinsonde Observation Significant Levels"
+        },
+        {
+            "productCode": "SHP",
+            "productName": "Surface Ship Report at Synoptic Time"
+        },
+        {
+            "productCode": "SIG",
+            "productName": "International Sigmet / Convective Sigmet"
+        },
+        {
+            "productCode": "SIM",
+            "productName": "Satellite Interpretation Message"
+        },
+        {
+            "productCode": "SLS",
+            "productName": "Severe Local Storm Watch and Areal Outline"
+        },
+        {
+            "productCode": "SMF",
+            "productName": "Smoke Management Weather Forecast"
+        },
+        {
+            "productCode": "SMW",
+            "productName": "Special Marine Warning"
+        },
+        {
+            "productCode": "SOO",
+            "productName": "SOO Product"
+        },
+        {
+            "productCode": "SPE",
+            "productName": "Satellite Precipitation Estimates (TXUS20 KWBC)"
+        },
+        {
+            "productCode": "SPF",
+            "productName": "Storm Strike Probability Bulletin (TPC)"
+        },
+        {
+            "productCode": "SPS",
+            "productName": "Special Weather Statement"
+        },
+        {
+            "productCode": "SPW",
+            "productName": "Shelter in Place Warning"
+        },
+        {
+            "productCode": "SQW",
+            "productName": "Snow Squall Warning"
+        },
+        {
+            "productCode": "SRF",
+            "productName": "Surf Forecast"
+        },
+        {
+            "productCode": "SRG",
+            "productName": "Soaring Guidance"
+        },
+        {
+            "productCode": "SSM",
+            "productName": "Main Synoptic Hour Surface Observation"
+        },
+        {
+            "productCode": "STA",
+            "productName": "Network and Severe Weather Statistical Summaries"
+        },
+        {
+            "productCode": "STD",
+            "productName": "Satellite Tropical Disturbance Summary"
+        },
+        {
+            "productCode": "STO",
+            "productName": "Road Condition Reports (State Agencies)"
+        },
+        {
+            "productCode": "STP",
+            "productName": "State Max/Min Temperature and Precipitation Table"
+        },
+        {
+            "productCode": "STQ",
+            "productName": "Spot Forecast Request"
+        },
+        {
+            "productCode": "SUM",
+            "productName": "Space Weather Message"
+        },
+        {
+            "productCode": "SVR",
+            "productName": "Severe Thunderstorm Warning"
+        },
+        {
+            "productCode": "SVS",
+            "productName": "Severe Weather Statement"
+        },
+        {
+            "productCode": "SWO",
+            "productName": "Severe Storm Outlook Narrative (AC)"
+        },
+        {
+            "productCode": "SWS",
+            "productName": "State Weather Summary"
+        },
+        {
+            "productCode": "SYN",
+            "productName": "Regional Weather Synopsis"
+        },
+        {
+            "productCode": "TAF",
+            "productName": "Terminal Aerodrome Forecast"
+        },
+        {
+            "productCode": "TAP",
+            "productName": "Terminal Alerting Products"
+        },
+        {
+            "productCode": "TAV",
+            "productName": "Travelers Forecast Table"
+        },
+        {
+            "productCode": "TCA",
+            "productName": "Aviation Tropical Cyclone Advisory"
+        },
+        {
+            "productCode": "TCD",
+            "productName": "Tropical Cyclone Discussion"
+        },
+        {
+            "productCode": "TCE",
+            "productName": "Tropical Cyclone Position Estimate"
+        },
+        {
+            "productCode": "TCM",
+            "productName": "Marine/Aviation Tropical Cyclone Advisory"
+        },
+        {
+            "productCode": "TCP",
+            "productName": "Public Tropical Cyclone Advisory"
+        },
+        {
+            "productCode": "TCS",
+            "productName": "Satellite Tropical Cyclone Summary"
+        },
+        {
+            "productCode": "TCU",
+            "productName": "Tropical Cyclone Update"
+        },
+        {
+            "productCode": "TCV",
+            "productName": "Tropical Cyclone Watch/Warning Break Points"
+        },
+        {
+            "productCode": "TIB",
+            "productName": "Tsunami Bulletin"
+        },
+        {
+            "productCode": "TID",
+            "productName": "Tide Report"
+        },
+        {
+            "productCode": "TMA",
+            "productName": "Tsunami Tide/Seismic Message Acknowledgement"
+        },
+        {
+            "productCode": "TOE",
+            "productName": "911 Telephone Outage Emergency"
+        },
+        {
+            "productCode": "TOR",
+            "productName": "Tornado Warning"
+        },
+        {
+            "productCode": "TPT",
+            "productName": "Temperature Precipitation Table (Natl and Intnl)"
+        },
+        {
+            "productCode": "TSU",
+            "productName": "Tsunami Watch/Warning"
+        },
+        {
+            "productCode": "TUV",
+            "productName": "Weather Bulletin"
+        },
+        {
+            "productCode": "TVL",
+            "productName": "Travelers Forecast"
+        },
+        {
+            "productCode": "TWB",
+            "productName": "Transcribed Weather Broadcast"
+        },
+        {
+            "productCode": "TWD",
+            "productName": "Tropical Weather Discussion"
+        },
+        {
+            "productCode": "TWO",
+            "productName": "Tropical Weather Outlook and Summary"
+        },
+        {
+            "productCode": "TWS",
+            "productName": "Tropical Weather Summary"
+        },
+        {
+            "productCode": "URN",
+            "productName": "Aircraft Reconnaissance"
+        },
+        {
+            "productCode": "UVI",
+            "productName": "Ultraviolet Index"
+        },
+        {
+            "productCode": "VAA",
+            "productName": "Volcanic Activity Advisory"
+        },
+        {
+            "productCode": "VER",
+            "productName": "Forecast Verification Statistics"
+        },
+        {
+            "productCode": "VFT",
+            "productName": "Terminal Aerodrome Forecast (TAF) Verification"
+        },
+        {
+            "productCode": "VOW",
+            "productName": "Volcano Warning"
+        },
+        {
+            "productCode": "WA0",
+            "productName": "Airmet (Pacific)"
+        },
+        {
+            "productCode": "WA1",
+            "productName": "Airmet (Northeast)"
+        },
+        {
+            "productCode": "WA2",
+            "productName": "Airmet (Southeast)"
+        },
+        {
+            "productCode": "WA3",
+            "productName": "Airmet (North Central)"
+        },
+        {
+            "productCode": "WA4",
+            "productName": "Airmet (South Central)"
+        },
+        {
+            "productCode": "WA5",
+            "productName": "Airmet (Rocky Mountains)"
+        },
+        {
+            "productCode": "WA6",
+            "productName": "Airmet (West Coast)"
+        },
+        {
+            "productCode": "WA7",
+            "productName": "Airmet (Juneau, AK)"
+        },
+        {
+            "productCode": "WA8",
+            "productName": "Airmet (Anchorage, AK)"
+        },
+        {
+            "productCode": "WA9",
+            "productName": "Airmet (Fairbanks, AK)"
+        },
+        {
+            "productCode": "WAR",
+            "productName": "Space Environment Warning"
+        },
+        {
+            "productCode": "WAT",
+            "productName": "Space Environment Watch"
+        },
+        {
+            "productCode": "WCN",
+            "productName": "Weather Watch Clearance Notification"
+        },
+        {
+            "productCode": "WCR",
+            "productName": "Weekly Weather and Crop Report"
+        },
+        {
+            "productCode": "WDA",
+            "productName": "Weekly Data for Agriculture"
+        },
+        {
+            "productCode": "WDU",
+            "productName": "Warning Decision Update"
+        },
+        {
+            "productCode": "WEK",
+            "productName": "Routine Space Environment Product Issued Weekly"
+        },
+        {
+            "productCode": "WOU",
+            "productName": "Tornado/Severe Thunderstorm Watch"
+        },
+        {
+            "productCode": "WS1",
+            "productName": "Sigmet (Northeast)"
+        },
+        {
+            "productCode": "WS2",
+            "productName": "Sigmet (Southeast)"
+        },
+        {
+            "productCode": "WS3",
+            "productName": "Sigmet (North Central)"
+        },
+        {
+            "productCode": "WS4",
+            "productName": "Sigmet (South Central)"
+        },
+        {
+            "productCode": "WS5",
+            "productName": "Sigmet (Rocky Mountains)"
+        },
+        {
+            "productCode": "WS6",
+            "productName": "Sigmet (West Coast)"
+        },
+        {
+            "productCode": "WST",
+            "productName": "Tropical Cyclone Sigmet"
+        },
+        {
+            "productCode": "WSV",
+            "productName": "Volcanic Activity Sigmet"
+        },
+        {
+            "productCode": "WSW",
+            "productName": "Winter Weather Warnings / Watches / Advisories"
+        },
+        {
+            "productCode": "WWA",
+            "productName": "Watch Status Report"
+        },
+        {
+            "productCode": "WWP",
+            "productName": "Severe Thunderstorm / Tornado Watch Probabilities"
+        },
+        {
+            "productCode": "ZFP",
+            "productName": "Zone Forecast Product"
+        }
+    ]
+}

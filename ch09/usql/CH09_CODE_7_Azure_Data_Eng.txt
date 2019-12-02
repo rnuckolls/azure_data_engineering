@@ -13,5 +13,5 @@ CREATE ASSEMBLY [Newtonsoft.Json]
 FROM @"/Code/Assemblies/Players/v1/Newtonsoft.Json.dll";
 
 DROP ASSEMBLY IF EXISTS [Microsoft.Analytics.Samples.Formats];
-CREATE ASSSEMBLY [Microsoft.Analytics.Samples.Formats]
+CREATE ASSEMBLY [Microsoft.Analytics.Samples.Formats]
 FROM @"/Code/Assemblies/Players/v1/Microsoft.Analytics.Samples.Formats.dll";

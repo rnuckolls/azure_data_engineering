@@ -1,0 +1,4 @@
+New-AzSqlServer -ResourceGroupName "ade-dev-eastus2" -Location "East US 2" -ServerName "ade-dev-eastus2-sql" -ServerVersion "12.0" -SqlAdministratorCredentials (Get-Credential)
+New-AzSqlDatabase -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -DatabaseName "Playerstats"
+New-AzSqlServerFirewallRule -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -AllowAllAzureIPs
+Invoke-Sqlcmd -Query "CREATE TABLE PlayerNames (PlayerID int, FirstName nvarchar(255), LastName nvarchar(255));" -ServerInstance "tcp:ade-dev-eastus2-sql.database.windows.net" -Database "Playerstats" -Credential (Get-Credential)

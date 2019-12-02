@@ -1,0 +1,4 @@
+CREATE VIEW vw_PlayerNames 
+AS   
+SELECT PlayerID, FirstName, LastName
+FROM PlayerNames;
