@@ -1,0 +1,1 @@
+New-AzDataFactoryV2 -ResourceGroupName "ade-dev-eastus2" -Name "ade-dev-eastus2-adf" -Location "EastUS2" -ProjectName "abe-dev-eastus2-adf" -AccountName "azure10715" -RepositoryName "abe-dev-eastus2-adf" -CollaborationBranch "master" -RootFolder "/ch10/factory"

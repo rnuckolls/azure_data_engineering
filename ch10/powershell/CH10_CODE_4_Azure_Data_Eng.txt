@@ -1,0 +1,10 @@
+$Secure = Read-Host -AsSecureString
+$App = New-AzADApplication -DisplayName "ade-dev-eastus2-adf-id" -IdentifierUris "http://none.none" -Password $Secure
+
+$FilePath = "~/adf/AzureDataLakeAnalytics1.json"
+$File = (Get-Content ($FilePath) | ConvertFrom-Json)
+
+$Encrypted = ConvertFrom-SecureString -SecureString $Secure
+Invoke-Expression ('$file.' + "properties.typeProperties.servicePrincipalId='" + $App.ApplicationId.Guid + "'")
+Invoke-Expression ('$file.' + "properties.typeProperties.encryptedCredential='" + $Encrypted + "'")
+$File | ConvertTo-Json -depth 100 | Out-File $FilePath

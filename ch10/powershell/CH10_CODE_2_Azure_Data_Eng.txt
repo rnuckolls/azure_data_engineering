@@ -1,0 +1,1 @@
+Set-AzDataFactoryV2 -ResourceGroupName "abe-dev-eastus2" -Name "abe-dev-eastus2-adf" -Location "EastUS2" -HostName "https://github.com" -AccountName "rnuckolls" -RepositoryName "azure-data-engineering" -CollaborationBranch "master" -RootFolder "/ch10/factory"
