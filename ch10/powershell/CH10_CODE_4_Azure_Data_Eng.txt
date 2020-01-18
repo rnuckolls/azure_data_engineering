@@ -1,10 +1,21 @@
-$Secure = Read-Host -AsSecureString
-$App = New-AzADApplication -DisplayName "ade-dev-eastus2-adf-id" -IdentifierUris "http://none.none" -Password $Secure
+$Secure = Read-Host -AsSecureString 
+
+New-AzADApplication -DisplayName "ade-dev-eastus2-adf-id" -IdentifierUris "http://none.none" -Password $Secure
+$App = Get-AzADApplication -DisplayName "ade-dev-eastus2-adf-id"
+
+$Hash = ConvertFrom-SecureString -SecureString $Secure
+$App.ApplicationId.Guid
+$Hash
+
+$Adla = Get-AzResource -Name "adedeveastus2" -ResourceType "Microsoft.DataLakeAnalytics/accounts"
+$App = Get-AzADApplication -DisplayName "ade-dev-eastus2-adf-id"
+$Prin = New-AzADServicePrincipal -ApplicationId $App.ApplicationId.Guid -Scope $Adla.ResourceId -Role "Contributor"
+
 
 $FilePath = "~/adf/AzureDataLakeAnalytics1.json"
 $File = (Get-Content ($FilePath) | ConvertFrom-Json)
 
-$Encrypted = ConvertFrom-SecureString -SecureString $Secure
+$Hash = ConvertFrom-SecureString -SecureString $Secure
 Invoke-Expression ('$file.' + "properties.typeProperties.servicePrincipalId='" + $App.ApplicationId.Guid + "'")
-Invoke-Expression ('$file.' + "properties.typeProperties.encryptedCredential='" + $Encrypted + "'")
+Invoke-Expression ('$file.' + "properties.typeProperties.encryptedCredential='" + $Hash + "'")
 $File | ConvertTo-Json -depth 100 | Out-File $FilePath

@@ -1,0 +1,16 @@
+{
+    "name": "AzureDataLakeStore1",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [adls,usql],
+        "type": "AzureDataLakeStore",
+        "typeProperties": {
+            "dataLakeStoreUri": "https://adedeveastus2.azuredatalakestore.net/webhdfs/v1",
+            "servicePrincipalId": "9999999c-904b-4948-abb6-2222222ca836",
+            "tenant": "ffffffff-812a-43cf-b020-777777752901",
+            "subscriptionId": "fdffffff-7061-4721-abbc-bbbbbbbc3d5c",
+            "resourceGroupName": "ade-dev-eastus2",
+            "encryptedCredential": "encryptedcredential=="
+        }
+    }
+}
