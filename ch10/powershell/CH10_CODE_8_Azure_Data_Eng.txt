@@ -1,2 +1,1 @@
-New-AzDataFactoryV2LinkedServiceEncryptedCredential -ResourceGroupName "ade-dev-eastus2" -DataFactoryName "ade-dev-eastus2-adf" -IntegrationRuntimeName "AutoResolveIntegrationRuntime" -DefinitionFile "~/adf/AzureDataLake1.json" > "~/adf/AzureDataLake1encp.json"
-Set-AzDataFactoryV2LinkedService -ResourceGroupName "ade-dev-eastus2" -DataFactoryName "ade-dev-eastus2-adf" -Name "AzureDataLake1" -DefinitionFile "~/adf/AzureDataLake1encp.json"
+Set-AzDataFactoryV2LinkedService -ResourceGroupName "ade-dev-eastus2" -DataFactoryName "ade-dev-eastus2-adf" -Name "AzureDataLake1" -DefinitionFile "~/adf/AzureDataLake1.json"
