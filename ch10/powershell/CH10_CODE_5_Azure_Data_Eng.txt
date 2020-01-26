@@ -1,3 +1,2 @@
-$Adla = Get-AzResource -Name "adedeveastus2" -ResourceType "Microsoft.DataLakeAnalytics/accounts"
 $App = Get-AzADApplication -DisplayName "ade-dev-eastus2-adf-id"
 New-AzADServicePrincipal -ApplicationId $App.ApplicationId.Guid

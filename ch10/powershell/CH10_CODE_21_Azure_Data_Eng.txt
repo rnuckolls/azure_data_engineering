@@ -1,4 +1,2 @@
-New-AzSqlServer -ResourceGroupName "ade-dev-eastus2" -Location "East US 2" -ServerName "ade-dev-eastus2-sql" -SqlAdministratorCredentials (Get-Credential)
-New-AzSqlDatabase -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -DatabaseName "Playerstats" -Edition "Basic"
-New-AzSqlServerFirewallRule -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -AllowAllAzureIPs
-Invoke-Sqlcmd -Query "CREATE TABLE SensorAverages (Player nvarchar(255), Node int, NodeAvg decimal, EventDate DateTime);" -ServerInstance "tcp:ade-dev-eastus2-sql.database.windows.net" -Database "Playerstats" -Credential (Get-Credential)
+Set-AzDataFactoryV2Dataset -ResourceGroupName "ade-dev-eastus2" -DataFactoryName "ade-dev-eastus2-adf" -Name "FilesBinary1" -DefinitionFile "~/adf/FilesBinary1.json"
+Set-AzDataFactoryV2Dataset -ResourceGroupName "ade-dev-eastus2" -DataFactoryName "ade-dev-eastus2-adf" -Name "ADLBinary1" -DefinitionFile "~/adf/ADLBinary1.json"
