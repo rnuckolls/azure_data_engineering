@@ -3,31 +3,45 @@
     "properties": {
         "activities": [
             {
-                "name": "U-SQL1",
-                "type": "DataLakeAnalyticsU-SQL",
+                "name": "Copy data1",
+                "type": "Copy",
                 "dependsOn": [],
                 "policy": {
                     "timeout": "0.01:00:00",
                     "retry": 1,
-                    "retryIntervalInSeconds": 60,
+                    "retryIntervalInSeconds": 30,
                     "secureOutput": false,
                     "secureInput": false
                 },
                 "userProperties": [],
                 "typeProperties": {
-                    "scriptPath": "Code/Usql/Players/readview.usql",
-                    "degreeOfParallelism": 2,
-                    "priority": 10,
-                    "compilationMode": "Semantic",
-                    "scriptLinkedService": {
-                        "referenceName": "AzureDataLakeStore1",
-                        "type": "LinkedServiceReference"
-                    }
+                    "source": {
+                        "type": "BinarySource",
+                        "storeSettings": {
+                            "type": "AzureFileStorageReadSettings",
+                            "recursive": true
+                        }
+                    },
+                    "sink": {
+                        "type": "BinarySink",
+                        "storeSettings": {
+                            "type": "AzureDataLakeStoreWriteSettings"
+                        }
+                    },
+                    "enableStaging": false
                 },
-                "linkedServiceName": {
-                    "referenceName": "AzureDataLakeAnalytics1",
-                    "type": "LinkedServiceReference"
-                }
+                "inputs": [
+                    {
+                        "referenceName": "Binary1",
+                        "type": "DatasetReference"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "Binary2",
+                        "type": "DatasetReference"
+                    }
+                ]
             }
         ],
         "annotations": []
