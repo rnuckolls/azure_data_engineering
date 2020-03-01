@@ -1,0 +1,6 @@
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql.database.windows.net" -Database "Playerstats" -Query "" -ConnectionString
+Invoke-Sqlcmd -Query "SELECT COUNT(*) AS Count FROM MyTable" -ConnectionString "Data Source=tcp:ade-dev-eastus2-sql.database.windows.net;Initial Catalog=abe-dev-playerstats;Integrated Security=True;ApplicationIntent=ReadOnly"
+Invoke-Sqlcmd -Query "CREATE USER "Technical Operations" FROM EXTERNAL PROVIDER;" -ConnectionString "Data Source=tcp:ade-dev-eastus2-sql.database.windows.net;Initial Catalog=abe-dev-playerstats;Integrated Security=True;"
+
+CREATE USER [Technical Operations] FROM EXTERNAL PROVIDER;
+EXEC sp_addrolemember [db_owner], [Technical Operations];
