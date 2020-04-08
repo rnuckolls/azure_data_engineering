@@ -1,0 +1,1 @@
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "master" -Credential (Get-Credential) -Query "CREATE LOGIN remoteuser WITH PASSWORD = {YOURPASSWORD};"

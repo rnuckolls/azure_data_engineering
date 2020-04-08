@@ -1,0 +1,2 @@
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential (Get-Credential) -Query "CREATE USER remoteuser FOR LOGIN remoteuser;"
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential (Get-Credential) -Query "ALTER ROLE db_datareader ADD MEMBER remoteuser;"

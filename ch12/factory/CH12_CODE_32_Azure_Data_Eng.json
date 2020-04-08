@@ -1,0 +1,49 @@
+{
+    "name": "DelimitedText1",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureDataLakeStore1",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureDataLakeStoreLocation",
+                "fileName": "PlayerDetails.txt",
+                "folderPath": "Raw/Players/v1"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "PlayerId",
+                "type": "String"
+            },
+            {
+                "name": "PlayerName",
+                "type": "String"
+            },
+            {
+                "name": "TeamName",
+                "type": "String"
+            },
+            {
+                "name": "TeamPosition",
+                "type": "String"
+            },
+            {
+                "name": "PositionStart",
+                "type": "String"
+            },
+            {
+                "name": "PositionEnd",
+                "type": "String"
+            }
+        ]
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

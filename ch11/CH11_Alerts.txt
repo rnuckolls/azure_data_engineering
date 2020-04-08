@@ -1,0 +1,25 @@
+$MonitorParameters = @{
+  ResourceId = "/subscriptions/$($(Get-AzContext).Subscription.Id)/resourceGroups/$resourceGroupName/providers/Microsoft.Sql/servers/$serverName/databases/$databaseName"
+  TimeGrain = [TimeSpan]::Parse("00:05:00")
+  MetricNames = "dtu_consumption_percent"
+}
+(Get-AzMetric @MonitorParameters -DetailedOutput).MetricValues
+
+Add-AzMetricAlertRule -ResourceGroup $resourceGroupName `
+    -Name "MySampleAlertRule" `
+    -Location $location `
+    -TargetResourceId "/subscriptions/$($(Get-AzContext).Subscription.Id)/resourceGroups/$resourceGroupName/providers/Microsoft.Sql/servers/$serverName/databases/$databaseName" `
+    -MetricName "dtu_consumption_percent" `
+    -Operator "GreaterThan" `
+    -Threshold 90 `
+    -WindowSize $([TimeSpan]::Parse("00:05:00")) `
+    -TimeAggregationOperator "Average" `
+    -Action $(New-AzAlertRuleEmail -SendToServiceOwner)
+
+
+$DB = Get-AzSqlDatabase -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -DatabaseName "ade-dev-playerstats"
+$Metric = Get-AzMetric -ResourceId $DB.ResourceId -MetricName "dtu_consumption_percent" -TimeGrain 00:01:00 -DetailedOutput
+
+Add-AzMetricAlertRule -ResourceGroup "ade-dev-eastus2" -Name "CpuRule" -Location "" -TargetResourceId $DB.ResourceId
+-MetricName "dtu_consumption_percent" -Operator "GreaterThan" -Threshold 90 -WindowSize $([TimeSpan]::Parse("00:05:00"))
+-TimeAggregationOperator "Average" -Action $(New-AzAlertRuleEmail -SendToServiceOwner)

@@ -1,0 +1,1 @@
+Set-AzDataFactoryV2 -ResourceGroupName "ade-dev-eastus2" -Name "ade-dev-eastus2-adf" -Location "EastUS2" -HostName 'https://github.com' -AccountName "github-account" -RepositoryName "ade-dev-eastus2-adf" -CollaborationBranch "master" -RootFolder "/"

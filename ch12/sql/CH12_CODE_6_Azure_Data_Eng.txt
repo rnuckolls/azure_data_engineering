@@ -1,0 +1,5 @@
+$Cred = Get-Credential
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential $Cred -Query "CREATE TABLE PlayerDetails (PlayerId nvarchar(8),PlayerName nvarchar(100),TeamName nvarchar(100),TeamPosition nvarchar(100),PositionStart DateTime,PositionEnd DateTime);"
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential $Cred -Query "INSERT INTO PlayerDetails values ('abera101','Arnold Berathal','Jonestown Sluggers','Pitcher','2010-07-11','2020-07-11');"
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential $Cred -Query "INSERT INTO PlayerDetails values ('jstro101','John Strong','Poplar Bats','First Base','2010-07-11','2020-07-11');"
+Invoke-Sqlcmd -ServerInstance "tcp:ade-dev-eastus2-sql2.database.windows.net" -Database "ade-dev-sql2-gamestats" -Credential $Cred -Query "INSERT INTO PlayerDetails values ('mjone101','Michael Jones','Harrisburg Drivers','First Base','2018-07-11',NULL);"

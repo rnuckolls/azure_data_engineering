@@ -1,1 +1,1 @@
-New-AzSqlDatabaseCopy -ResourceGroupName "ade-dev-eastus2" -ServerName "ade-dev-eastus2-sql" -DatabaseName "Playerstats" -CopyResourceGroupName "ade-prod-eastus2" -CopyServerName "ade-prod-eastus2-sql" -CopyDatabaseName "Playerstats_2020_02_02_13_00" -AsJob -ServiceObjectiveName "S0"
+New-AzSqlDatabaseCopy -ResourceGroupName "ade-prod-eastus2" -ServerName "ade-prod-eastus2-sql" -DatabaseName "ade-prod-playerstats" -CopyResourceGroupName "ade-dev-eastus2" -CopyServerName "ade-dev-eastus2-sql" -CopyDatabaseName "ade-dev-playerstats_2020_02_02_13_00" -ServiceObjectiveName "S0"

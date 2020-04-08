@@ -1,0 +1,1 @@
+Set-AzDataFactoryV2 -ResourceGroupName "ade-dev-eastus2" -Name "ade-dev-eastus2-adf" -Location "EastUS2" -AccountName "azure99999" -RepositoryName "ade-dev-eastus2-adf" -CollaborationBranch "master" -RootFolder "/" -ProjectName "YourProject"

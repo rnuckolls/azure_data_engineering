@@ -1,0 +1,3 @@
+$Resource = Get-AzResource -Name "ade-dev-eastus2-sql-shuttle"
+$Subscription = Get-AzSubscription -SubscriptionName "Dev Subscription"
+Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ade-dev-eastus2" -DestinationSubscriptionId $Subscription.Id

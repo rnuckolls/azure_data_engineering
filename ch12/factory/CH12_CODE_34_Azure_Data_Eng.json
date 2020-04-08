@@ -1,0 +1,117 @@
+{
+    "name": "pipeline1",
+    "properties": {
+        "activities": [
+            {
+                "name": "Copy1",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.01:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "DelimitedTextSource",
+                        "storeSettings": {
+                            "type": "AzureDataLakeStoreReadSettings",
+                            "recursive": true
+                        },
+                        "formatSettings": {
+                            "type": "DelimitedTextReadSettings"
+                        }
+                    },
+                    "sink": {
+                        "type": "AzureSqlSink",
+                        "preCopyScript": "DELETE FROM [dbo].[PlayerDetails];",
+                        "disableMetricsCollection": false
+                    },
+                    "enableStaging": false,
+                    "translator": {
+                        "type": "TabularTranslator",
+                        "mappings": [
+                            {
+                                "source": {
+                                    "name": "PlayerId",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PlayerId",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "PlayerName",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PlayerName",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "TeamName",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "TeamName",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "TeamPosition",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "TeamPosition",
+                                    "type": "String"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "PositionStart",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PositionStart",
+                                    "type": "DateTime"
+                                }
+                            },
+                            {
+                                "source": {
+                                    "name": "PositionEnd",
+                                    "type": "String"
+                                },
+                                "sink": {
+                                    "name": "PositionEnd",
+                                    "type": "DateTime"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "inputs": [
+                    {
+                        "referenceName": "DelimitedText1",
+                        "type": "DatasetReference"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "AzureSqlTable1",
+                        "type": "DatasetReference"
+                    }
+                ]
+            }
+        ],
+        "annotations": []
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
