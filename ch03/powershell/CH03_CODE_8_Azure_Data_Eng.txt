@@ -1,0 +1,4 @@
+$SecureStringPassword = ConvertTo-SecureString -String "Password1!" -AsPlainText -Force
+$User = New-AzADUser -DisplayName "Tech User" -UserPrincipalName "techuser@domain.onmicrosoft.com" -Password $SecureStringPassword -MailNickname "techuser"
+$SecureStringPassword = ConvertTo-SecureString -String "Password1!" -AsPlainText -Force
+$User2 = New-AzADUser -DisplayName "Finance User" -UserPrincipalName "financeuser@domain.onmicrosoft.com" -Password $SecureStringPassword -MailNickname "financeuser"
