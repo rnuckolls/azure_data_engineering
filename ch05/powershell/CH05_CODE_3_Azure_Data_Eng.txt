@@ -21,6 +21,6 @@ $result = switch (Get-Random -Minimum 0 -Maximum 3) {
 }
 
 $message = @{Game=$game; Pitcher=$pitcher; InningPitch=$inningPitch; Speed=$speed; Type=$type; Result=$result} | ConvertTo-Json -Compress 
-$queueMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage  -ArgumentList $message
+$queueMessage = New-Object -TypeName Microsoft.Azure.Storage.Queue.CloudQueueMessage  -ArgumentList $message
 $queue.CloudQueue.AddMessageAsync($QueueMessage)
 }

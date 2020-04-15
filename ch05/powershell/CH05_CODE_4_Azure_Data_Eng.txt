@@ -5,10 +5,10 @@ $hasMessage = $TRUE
 while ($hasMessage)
 {
 $queueMessage = $queue.CloudQueue.GetMessageAsync()
-if ($queueMessage.Result -is [Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage])
+if ($queueMessage.Result -is [Microsoft.Azure.Storage.Queue.CloudQueueMessage])
 {
 Write-Host $queueMessage.Result.AsString
-$queue.CloudQueue.DeleteMessageAsync ($queueMessage.Result.Id,$queueMessage.Result.popReceipt)
+$queue.CloudQueue.DeleteMessageAsync($queueMessage.Result.Id,$queueMessage.Result.popReceipt)
 $queueMessage = $null
 }
 else { $hasMessage = $FALSE }
