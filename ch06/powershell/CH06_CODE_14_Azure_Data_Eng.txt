@@ -1,0 +1,29 @@
+$endpoint = "https://ade-dev-eastus2-hubs.servicebus.windows.net/biometricstats/messages" + "?timeout=60&api-version=2014-01"
+
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Authorization", $SASToken)
+$headers.Add("Content-Type", "application/atom+xml;type=entry;charset=utf-8")
+$headers.Add("Host", "ade-dev-eastus2-hubs.servicebus.windows.net")
+
+for($i = 0; $i -lt 300; $i++)
+{
+$player = switch (Get-Random -Minimum 1 -Maximum 4) {
+  1 {"abera101"; break}
+  2 {"jjone101"; break}
+  3 {"ksmit102"; break}
+}
+$node = GET-Random -Minimum 1 -Maximum 40
+$val = Get-Random -Minimum 0 -Maximum 254
+$eventDate = (Get-Date).ToUniversalTime().ToString("o")
+
+#Construct body using Hashtable
+$htbody = @{ 
+    Player= $player
+    Node= $node
+    NodeValue= $val
+    EventTime= $eventDate
+  }
+$body = ConvertTo-Json $htbody
+
+Invoke-WebRequest -Uri $endpoint -Method POST -Body $body -Headers $headers
+}

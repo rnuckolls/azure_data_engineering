@@ -1,0 +1,2 @@
+New-AzSqlServer -ResourceGroupName "ade-dev-eastus2" -Location "East US 2" -ServerName "ade-dev-eastus2-sql" -SqlAdministratorCredentials (Get-Credential)
+

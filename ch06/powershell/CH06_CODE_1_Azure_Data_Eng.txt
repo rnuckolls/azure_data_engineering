@@ -1,12 +1,1 @@
-$sally = Get-AzStreamAnalyticsJob -ResourceGroupName "abe-dev-eastus2" -Name "abe-dev-eastus2-biometricstats"
-$sally.Properties |ConvertTo-Json -Depth 100 | Out-File ~/damocles.json
-New-AzStreamAnalyticsJob -ResourceGroupName "abe-dev-eastus2" -Name "abe-dev-eastus2-asa-biometricstats" -File ~/asa/streamingjob.json
-
-New-AzStreamAnalyticsInput -ResourceGroupName "abe-dev-eastus2" -JobName "abe-dev-eastus2-biometricstats" -Name "HubsInputBiometrics" -File "~/inputs.json"
-New-AzStreamAnalyticsOutput -ResourceGroupName "abe-dev-eastus2" -JobName "abe-dev-eastus2-biometricstats" -Name "SqlOutputRaw" -File "~/outputs.json"
-
-New-AzStreamAnalyticsTransformation -ResourceGroupName "abe-dev-eastus2" -JobName "abe-dev-eastus2-asa-biometricstats" -Name "Transformation" -File ~/asa/transform.json -Force
-
-Start-AzStreamAnalyticsJob -ResourceGroupName "abe-dev-eastus2" -Name "bio" -OutputStartMode "CustomTime" -OutputStartTime "2019-06-01T00:00Z"
-Start-AzStreamAnalyticsJob -ResourceGroupName "abe-dev-eastus2" -Name "bio" -OutputStartMode "LastOutputEventTime"
-Stop-AzStreamAnalyticsJob -ResourceGroupName "abe-dev-eastus2" -Name "bio"
+New-AzStreamAnalyticsJob -ResourceGroupName "ade-dev-eastus2" -Name "ade-dev-eastus2-biometricstats" -File ~/asa/streamingjob.json
