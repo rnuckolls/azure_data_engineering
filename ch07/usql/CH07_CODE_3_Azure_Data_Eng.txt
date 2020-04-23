@@ -1,7 +1,8 @@
-DECLARE EXTERNAL @in string = "/Staging/Sensor/v1/{*}.csv";
+DECLARE EXTERNAL @in string = "/Staging/biometricstats/v1/{*}.csv";
 
-@Players = 
-    EXTRACT Id Guid,
+@Players =
+    EXTRACT
+        Id Guid,
         Player string,
         Node int,
         NodeValue decimal,
@@ -10,14 +11,22 @@ DECLARE EXTERNAL @in string = "/Staging/Sensor/v1/{*}.csv";
         EventEnqueuedUtcTime DateTime,
         EventProcessedUtcTime DateTime
     FROM @in
-    USING Extractors.Csv(skipFirstNRows: 1);
+    USING Extractors.Csv(
+    skipFirstNRows: 1
+    );
 
-@PlayersPassthrough = 
-    SELECT *
-    FROM @Players;
+@DailyAgg = 
+    SELECT 	
+        Player,
+        Node,
+        EventTime.ToString("d") AS AvgDate,
+        AVG([Value]) AS Average
+    FROM @Players
+    GROUP BY Player, Node, EventTime.ToString("d");
 
-DECLARE EXTERNAL @out string = "/Raw/Sensor/v1/sensor_all.csv";
+DECLARE EXTERNAL @out string = 
+<linearrow />"/Curated/biometricstats/v1/daily_value_avg.csv";
 
-OUTPUT @PlayersPassthrough
+OUTPUT @DailyAgg
     TO @out
     USING Outputters.Csv(outputHeader: true);

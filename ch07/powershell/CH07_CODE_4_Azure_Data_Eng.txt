@@ -1,1 +1,1 @@
-Submit-AzDataLakeAnalyticsJob -Account "adedeveastus2" -Name "Sensor Passthrough" -ScriptPath "~/adla/passthrough.usql" -AnalyticsUnits 1
+Submit-AzDataLakeAnalyticsJob -Account "adedeveastus2" -Name "Sensor Daily Agg" -ScriptPath "~/adla/dailyagg.usql" -AnalyticsUnits 1
