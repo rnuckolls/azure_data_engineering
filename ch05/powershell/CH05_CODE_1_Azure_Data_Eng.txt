@@ -1,0 +1,8 @@
+{
+  "Game":"JNT202004080", <1>
+  "Pitcher":"abera101", <2>
+  "InningPitch":"05T25", <3>
+  "Speed":100.2,
+  "Type":"Fastball",
+  "Result":"B"
+}
